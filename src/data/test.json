@@ -1,0 +1,68 @@
+[
+    {
+        "id":"0",
+        "question": "Are you more comfortable with work that:",
+        "options": [
+            {
+                "choice": "Contracted",
+                "value": "j"
+            },
+            {
+                "choice": "Done on a casual basis",
+                "value": "p"
+            }
+        ]
+    },{
+        "id":"1",
+        "question": "At a party do you:",
+        "options": [
+            {
+                "choice": "Interact with many, including strangers",
+                "value": "e"
+            },
+            {
+                "choice": "Done on a casual basis",
+                "value": "i"
+            }
+        ]
+    },{
+        "id":"2",
+        "question": "Are you more:",
+        "options": [
+            {
+                "choice": "Realistic than speculative",
+                "value": "s"
+            },
+            {
+                "choice": "Speculative than realistic",
+                "value": "n"
+            }
+        ]
+    },{
+        "id":"3",
+        "question": "Is it worse to:",
+        "options": [
+            {
+                "choice": "Have your “head in the clouds”",
+                "value": "s"
+            },
+            {
+                "choice": "Be “in a rut”",
+                "value": "n"
+            }
+        ]
+    },{
+        "id":"4",
+        "question": "Are you more impressed by:",
+        "options": [
+            {
+                "choice": "Principles",
+                "value": "t"
+            },
+            {
+                "choice": "Emotions",
+                "value": "f"
+            }
+        ]
+    }
+]
