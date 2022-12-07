@@ -19,12 +19,8 @@ function TestPage(){
              Identifying a career path based on what you truly are!</p>
              <button className='test__start-btn' >Let's start !!</button>
         </div>
-
         <Test/>
-
         </> 
-
-
     )
 }
 
