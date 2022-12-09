@@ -6,10 +6,16 @@ import { useState } from 'react';
 function Test({quiz, class_name}){
 
    const allTests = quiz
-   const [answers, setAnswers] = useState([])
+   const [result, setResult] = useState("")
    const handleChange = (e) => {
-    e.preventdefault()
+    e.preventDefault()
+    let collectResult=[]
+    console.log(e.target);
+    //collectResult.push(e.target.value)
+
   }
+
+ 
 
     return(
         <form className={class_name} id={class_name}> 
@@ -22,7 +28,7 @@ function Test({quiz, class_name}){
                                 name={`question${quiz.id}`} 
                                 value={quiz.options[0].value}
                                 onChange
-                                checked
+                                checked={result === quiz.options[0].value}
                                 />
                                 <label>{quiz.options[0].choice}</label>                           
                             </div>
@@ -32,7 +38,8 @@ function Test({quiz, class_name}){
                                 name={`question${quiz.id}`} 
                                 value={quiz.options[1].value}
                                 onChange
-                                checked/>
+                                checked={result === quiz.options[1].value}
+                                />
                                 <label>{quiz.options[1].choice} </label>                           
                             </div>
                     </div>
