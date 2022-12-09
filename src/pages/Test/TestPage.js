@@ -11,6 +11,17 @@ import { useEffect, useState } from 'react';
 function TestPage(){
     const [currentScore, setCurrentscore] = useState([]);
 
+    const getTotal = () => {
+        let total =[]
+        Object.values(currentScore).forEach(val => {
+            Object.values(val).forEach(personality => {
+                total.push(personality);
+              });
+          });
+
+          console.log(total)
+    }
+
     return( 
         <>      
         <div className='hero'>
@@ -25,22 +36,31 @@ function TestPage(){
             key={Test1.id}  
             quiz={Test1}
             class_name="test1"
+            allAnswers={currentScore}
+            collectAnswers={setCurrentscore}
             />
             <Test 
             key={Test2.id} 
             quiz={Test2}
             class_name="test2"
+            allAnswers={currentScore}
+            collectAnswers={setCurrentscore}
             />
             <Test  
             key={Test3.id}
             quiz={Test3}
             class_name="test3"
+            allAnswers={currentScore}
+            collectAnswers={setCurrentscore}
             />
             <Test 
             key={Test4.id} 
             quiz={Test4}
-            class_name="test4class_name"
+            class_name="test4"
+            allAnswers={currentScore}
+            collectAnswers={setCurrentscore}
             />
+            <button onClick={getTotal}>FINISH</button> 
         </> 
     )
 }
