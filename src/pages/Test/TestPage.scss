@@ -1,0 +1,57 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+body{
+    padding: 6rem 10rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+    
+}
+
+.test1, .test2, .test3, .test4{
+    margin: 60vh 0;
+}
+
+.test{
+
+    &__title{
+        font-family:"Lovelace";
+        font-weight:400;
+        font-style:normal;
+        font-size:3rem;
+        line-height: 4.5rem;
+    }
+
+    &__intro{
+        font-weight:200;
+        font-size: 1.1rem;
+        line-height: 2rem;
+        color: $Slate;
+    }
+    
+    &__single{
+    padding-bottom: 1.5rem;
+    max-width: 24rem;
+        h2{
+            font-family:"Lovelace";
+            font-weight:400;
+            font-style:normal;
+            font-size:1.5rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__option{
+        font-weight:200;
+        font-size: 1.1rem;
+        color: $Slate;
+    }
+
+}
+

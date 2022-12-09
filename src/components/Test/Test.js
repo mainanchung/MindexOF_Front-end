@@ -14,10 +14,7 @@ function Test({quiz, class_name}){
     //collectResult.push(e.target.value)
 
   }
-
- 
-
-    return(
+return(
         <form className={class_name} id={class_name}> 
             {allTests.map(quiz => 
                     <div className='test__single' key={quiz.id}>
@@ -30,7 +27,7 @@ function Test({quiz, class_name}){
                                 onChange
                                 checked={result === quiz.options[0].value}
                                 />
-                                <label>{quiz.options[0].choice}</label>                           
+                                <label className='test__option'>{quiz.options[0].choice}</label>                           
                             </div>
                             <div className='test__select'>
                                 <input 
@@ -40,7 +37,7 @@ function Test({quiz, class_name}){
                                 onChange
                                 checked={result === quiz.options[1].value}
                                 />
-                                <label>{quiz.options[1].choice} </label>                           
+                                <label className='test__option' >{quiz.options[1].choice} </label>                           
                             </div>
                     </div>
                 
