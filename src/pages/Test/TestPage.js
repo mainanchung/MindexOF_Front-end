@@ -10,17 +10,37 @@ import { useEffect, useState } from 'react';
 
 function TestPage(){
     const [currentScore, setCurrentscore] = useState([]);
+    const [userType, setUserType] = useState("");
 
     const getTotal = () => {
         let total =[]
+        let totalForEachType = {}
         Object.values(currentScore).forEach(val => {
             Object.values(val).forEach(personality => {
                 total.push(personality);
               });
           });
 
+          //Array.prototype.reduce() works, too.
+            total.forEach((i)=> { 
+            totalForEachType[i] = (totalForEachType[i] || 0) + 1; 
+            });
+
           console.log(total)
+          console.log(totalForEachType)
+          setCurrentscore(totalForEachType) 
+            let type = '';
+            type += (currentScore.e >= currentScore.i) ? "E" : "I";
+            type += (currentScore.s >= currentScore.n) ? "S" : "N";
+            type += (currentScore.t >= currentScore.f) ? "T" : "F";
+            type += (currentScore.j >= currentScore.p) ? "J" : "P";
+            
+            setUserType(type)     
     }
+
+    console.log(userType)
+    console.log(currentScore)
+
 
     return( 
         <>      
@@ -60,6 +80,7 @@ function TestPage(){
             allAnswers={currentScore}
             collectAnswers={setCurrentscore}
             />
+            
             <button onClick={getTotal}>FINISH</button> 
         </> 
     )

@@ -4,11 +4,11 @@
         "question": "Do you...",
         "options": [
             {
-                "choice": "speak easily and at length with strangers",
+                "choice": "Speak easily and at length with strangers",
                 "value": "e"
             },
             {
-                "choice": "find little to say to strangers",
+                "choice": "Find little to say to strangers",
                 "value": "i"
             }
         ]
@@ -17,37 +17,37 @@
         "question": "Do you go more by...",
         "options": [
             {
-                "choice": "facts",
+                "choice": "Facts",
                 "value": "s"
             },
             {
-                "choice": " principles",
+                "choice": "Principles",
                 "value": "n"
             }
         ]
     },{
         "id":"15",
-        "question": "Which seems the greater error:",
+        "question": "Which seems the greater error?",
         "options": [
             {
-                "choice": "to be too passionate",
+                "choice": "To be too passionate",
                 "value": "t"
             },
             {
-                "choice": "to be too objective",
+                "choice": "To be too objective",
                 "value": "f"
             }
         ]
     },{
         "id":"16",
-        "question": "In relationships should most things be:",
+        "question": "In relationships should most things be...",
         "options": [
             {
-                "choice": "re-negotiable",
+                "choice": "Re-negotiable",
                 "value": "j"
             },
             {
-                "choice": "random and circumstantial",
+                "choice": "Random and circumstantial",
                 "value": "p"
             }
         ]

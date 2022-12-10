@@ -1,20 +1,20 @@
 [
     {
         "id":"9",
-        "question": "Does new and non-routine interaction:",
+        "question": "Does new and non-routine interaction...",
         "options": [
             {
-                "choice": "stimulate and energize you",
+                "choice": "Stimulate and energize you",
                 "value": "e"
             },
             {
-                "choice": "tax your reserves",
+                "choice": "Tax your reserves",
                 "value": "i"
             }
         ]
     },{
         "id":"10",
-        "question": "In doing ordinary things are you more likely to:",
+        "question": "In doing ordinary things, are you more likely to...",
         "options": [
             {
                 "choice": "Do it the usual way",
@@ -27,20 +27,20 @@
         ]
     },{
         "id":"11",
-        "question": "Which appeals to you more:",
+        "question": "Which appeals to you more?",
         "options": [
             {
                 "choice": "Consistency of thought",
                 "value": "t"
             },
             {
-                "choice": " Harmonious human relationships",
+                "choice": "Harmonious human relationships",
                 "value": "f"
             }
         ]
     },{
         "id":"12",
-        "question": "Would you say you are more:",
+        "question": "Would you say you are more...",
         "options": [
             {
                 "choice": "Serious and determined",

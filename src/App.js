@@ -19,6 +19,16 @@ function App() {
             path = '/test'
             element = {<TestPage/>}
           />
+
+          <Route
+            path = '/types'
+            element = {<typesPage/>}
+          />
+
+          <Route
+            path = '/types/:id'
+            element = {<typesPage/>}
+          />
          
         </Routes>
         

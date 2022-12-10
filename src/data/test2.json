@@ -1,7 +1,7 @@
 [
     {
         "id":"5",
-        "question": "In phoning do you:",
+        "question": "In phoning, do you...",
         "options": [
             {
                 "choice": "Rarely question that it will all be said",
@@ -14,7 +14,7 @@
         ]
     },{
         "id":"6",
-        "question": "Are you more interested in:",
+        "question": "You are more interested in...",
         "options": [
             {
                 "choice": "What is actual",
@@ -27,7 +27,7 @@
         ]
     },{
         "id":"7",
-        "question": "In judging others are you more swayed by:",
+        "question": "In judging others, are you more swayed by...",
         "options": [
             {
                 "choice": "Laws than circumstances",
@@ -40,7 +40,7 @@
         ]
     },{
         "id":"8",
-        "question": "Do you want things:",
+        "question": "You prefer things to be...",
         "options": [
             {
                 "choice": "Settled and decided",
