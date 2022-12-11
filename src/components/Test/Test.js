@@ -21,10 +21,11 @@ const [answers, setAnswers] = useState({})
 return(
         <form  onSubmit={handleSubmit} className={class_name} id={class_name}> 
             {allTests.map(quiz => 
-                    <div className='test__single' key={quiz.id}>
+                    <div className='test__single' key={quiz.id} required="required">
                         <h2>{quiz.question}</h2>
                             <div className='test__select'>
                                 <input 
+                                required="required"
                                 type="radio" 
                                 name={`question${quiz.id}`} 
                                 value={quiz.options[0].value}
@@ -34,6 +35,7 @@ return(
                             </div>
                             <div className='test__select'>
                                 <input 
+                                required="required"
                                 type="radio" 
                                 name={`question${quiz.id}`} 
                                 value={quiz.options[1].value}
@@ -44,7 +46,7 @@ return(
                     </div>
                 
             )}
-          <button type="submit"> NEXT </button>
+          <button type="submit" className='test__single-btn'> Next </button>
     </form>
     )          
 }

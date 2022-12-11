@@ -4,13 +4,14 @@ import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
 import ResultPage from './pages/Result/ResultPage';
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         {/* <Header /> */}
         <Routes>
-         
+
           <Route
             path = '/'
             element = {<HomePage/>}
@@ -22,7 +23,7 @@ function App() {
           />
 
           <Route
-            path = '/test/result'
+            path = '/test/result/:type'
             element = {<ResultPage/>}
           />
 

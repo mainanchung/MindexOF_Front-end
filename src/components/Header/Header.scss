@@ -1,0 +1,22 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+
+.header{
+    grid-area: 1 / 2 / 2 / 8;
+    padding: 3rem 6rem;
+    border-bottom: 1px solid $Cloud;
+    height: 8rem;
+    
+    &__links{
+        display: flex;
+        justify-content: flex-end;
+       
+    }
+    &__link{
+        font-weight:200;
+        margin-left:2rem ;
+        text-decoration: none;
+    }
+}

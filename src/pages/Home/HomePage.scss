@@ -1,3 +1,45 @@
 @use '../../style/partials/fonts' as *;
 @use '../../style/partials/mixins' as *;
 @use '../../style/partials/variable' as *;
+
+
+.home{
+    &__container{
+        display : grid ;
+        grid-template-columns : repeat(7, 1fr) ;
+        grid-template-rows : repeat(5, 1fr) ;
+        grid-column-gap : 0px;
+        grid-row-gap : 0px ;}
+
+    &__hero{
+        grid-area: 2 / 2 / 6 / 7;
+        padding: 0 3rem 4rem 3rem;
+        width: 60%; 
+    }
+    
+    &__title{
+        font-family:"Lovelace";
+        font-weight:400;
+        font-style:normal;
+        font-size:3.5rem;
+        line-height: 4.5rem;
+    }
+
+    &__intro{
+        font-weight:200;
+        font-size: 1.1rem;
+        line-height: 2rem;
+        color: $Slate;
+    }
+
+    &__navigate-btn{
+        @include table_desck-secondaryBtn;
+    }
+    &__link{
+        text-decoration: none;
+       
+    }
+
+}
+
+

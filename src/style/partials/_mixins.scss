@@ -18,3 +18,19 @@
     @content;
   }
 }
+
+
+@mixin table_desck-secondaryBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Josefin Sans";
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 22px;
+    color:$Slate;
+    padding: 0.5rem 1rem;
+    background: $White;
+    border: 1px solid $Cloud;
+    border-radius: 20px; 
+  }
