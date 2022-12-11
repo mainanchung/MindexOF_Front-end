@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 
 function HomePage(){
-    const navigate = useNavigate()
+   
     const goNextHandler = () =>{ 
     }
     return( 

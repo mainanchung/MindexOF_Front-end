@@ -2,6 +2,7 @@ import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
+import ResultPage from './pages/Result/ResultPage';
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           <Route
             path = '/test'
             element = {<TestPage/>}
+          />
+
+          <Route
+            path = '/test/result'
+            element = {<ResultPage/>}
           />
 
           <Route
