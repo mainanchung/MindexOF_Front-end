@@ -44,9 +44,10 @@ function ResultCard({userType, typeData}){
                                 </div>
 
                             </div>
+                            <NavLink to="" className='type-card__btn-link'><button className='type-card__btn'>Find out more !</button></NavLink>
                         </div> 
          
-                        <NavLink to="" className='type-card__btn-link'><button className='type-card__btn'>Find out more !</button></NavLink>
+                        
                 </div>
             </div></> : ""}
         </>        

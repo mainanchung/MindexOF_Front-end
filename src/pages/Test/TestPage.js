@@ -10,6 +10,10 @@ import {Link} from 'react-scroll'
 import axios from 'axios';
 import Header from '../../components/Header/Header'
 import heroimg from '../../Assetes/image/HOME_img-01.svg'
+import test1img from '../../Assetes/image/star-partial.svg'
+import test2img from '../../Assetes/image/work2.svg'
+import test3img from '../../Assetes/image/work1.svg'
+import test4img from '../../Assetes/image/clients.svg'
 
 
 function TestPage(){
@@ -57,7 +61,7 @@ function TestPage(){
                         <p className='test__intro'>Understanding your Myers-Briggs personality type can help you identify careers you're best suited for.
                         This insight can help you understand what type of work and workplace environment might best fit your personality. 
                         Identifying a career path based on what you truly are!</p>
-                        <Link activeClass="active" to="test__container" spy={true} smooth={true}> <button className='test__start-btn' >Let's start</button></Link>
+                        <Link activeClass="active" to="test1" spy={true} smooth={true}> <button className='test__start-btn' >Let's start</button></Link>
                     </div>
                 <div className='test__hero--imgbox'>    
                     <img className='test__hero--img' src={heroimg} alt='home-hero-img'/>
@@ -65,38 +69,50 @@ function TestPage(){
             </div>
             <form  onSubmit={getTotal} className='test__all'> 
             <div className='test__container' id='test__container'>
-                <Test   
-                key={Test1.id}  
-                quiz={Test1}
-                scrollId="test2"
-                class_name="test1"
-                allAnswers={currentScore}
-                collectAnswers={setCurrentscore}
-                />
-                <Test 
-                key={Test2.id} 
-                quiz={Test2}
-                scrollId="test3"
-                class_name="test2"
-                allAnswers={currentScore}
-                collectAnswers={setCurrentscore}
-                />
-                <Test 
-                key={Test3.id}
-                quiz={Test3}
-                scrollId="test4"
-                class_name="test3"
-                allAnswers={currentScore}
-                collectAnswers={setCurrentscore}
-                />
-                <Test 
-                key={Test4.id} 
-                quiz={Test4}
-                scrollId="finish"
-                class_name="test4"
-                allAnswers={currentScore}
-                collectAnswers={setCurrentscore}
-                />
+                <div className='test-box__1'>
+                    <Test   
+                    key={Test1.id}  
+                    quiz={Test1}
+                    scrollId="test2"
+                    class_name="test1"
+                    allAnswers={currentScore}
+                    collectAnswers={setCurrentscore}
+                    />
+                    <img src={test1img} alt='test1img'/>
+                </div>
+                <div className='test-box__2'>
+                    <Test 
+                    key={Test2.id} 
+                    quiz={Test2}
+                    scrollId="test3"
+                    class_name="test2"
+                    allAnswers={currentScore}
+                    collectAnswers={setCurrentscore}
+                    />
+                     <img src={test2img} alt='test2img'/>
+                </div>
+                <div className='test-box__3'>
+                    <Test 
+                    key={Test3.id}
+                    quiz={Test3}
+                    scrollId="test4"
+                    class_name="test3"
+                    allAnswers={currentScore}
+                    collectAnswers={setCurrentscore}
+                    />
+                     <img src={test3img} alt='test3img'/>
+                </div>
+                <div className='test-box__4'>
+                    <Test 
+                    key={Test4.id} 
+                    quiz={Test4}
+                    scrollId="finish"
+                    class_name="test4"
+                    allAnswers={currentScore}
+                    collectAnswers={setCurrentscore}
+                    />
+                     <img src={test4img} alt='test4img'/>
+                </div>
             </div>
             
             <div className='test__final' id='finish'>
