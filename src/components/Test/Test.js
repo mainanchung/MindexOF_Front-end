@@ -1,25 +1,27 @@
 import  './Test.scss'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import {Link} from 'react-scroll'
 
 
 
-function Test({quiz, class_name, allAnswers, collectAnswers}){
+function Test({quiz, class_name, allAnswers, collectAnswers, scrollId}){
 
 const [answers, setAnswers] = useState({})
 
-   const allTests = quiz
+const allTests = quiz
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        collectAnswers({...allAnswers,[class_name]:answers})
+        collectAnswers({...allAnswers,[class_name]:answers})   
     }
 
    const handleChange = (e) => {
     setAnswers({...answers, [e.target.name]: e.target.value})
+    collectAnswers({...allAnswers,[class_name]:answers})
   }
   
 return(
-        <form  onSubmit={handleSubmit} className={class_name} id={class_name}> 
+        <div  className={class_name} id={class_name}> 
             {allTests.map(quiz => 
                     <div className='test__single' key={quiz.id} required="required">
                         <h2>{quiz.question}</h2>
@@ -46,8 +48,8 @@ return(
                     </div>
                 
             )}
-          <button type="submit" className='test__single-btn'> Next </button>
-    </form>
+           <Link activeClass="active" to={scrollId} spy={true} smooth={true}><button onClick={handleSubmit} type="submit" className='test__single-btn'> Next </button></Link>
+    </div>
     )          
 }
 

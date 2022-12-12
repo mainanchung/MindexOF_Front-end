@@ -4,19 +4,26 @@
 
 
 .header{
-    grid-area: 1 / 2 / 2 / 8;
-    padding: 3rem 6rem;
-    border-bottom: 1px solid $Cloud;
-    height: 8rem;
-    
+    @include desktop{
+        grid-area: 1 / 1 / 2 / 6;
+        padding: 3rem 6rem;
+        margin-top: 2rem;
+        height: 6rem;
+    }
+   
     &__links{
+        @include desktop{
         display: flex;
         justify-content: flex-end;
-       
+        }  
     }
+
     &__link{
+        @include desktop{
+            margin-left:2rem ; 
+        }
+        color: $Graphite;
         font-weight:200;
-        margin-left:2rem ;
         text-decoration: none;
     }
 }

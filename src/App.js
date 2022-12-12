@@ -4,12 +4,10 @@ import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
 import ResultPage from './pages/Result/ResultPage';
 
-
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
         <Routes>
 
           <Route
@@ -23,7 +21,7 @@ function App() {
           />
 
           <Route
-            path = '/test/result/:type'
+            path = '/test/:type'
             element = {<ResultPage/>}
           />
 

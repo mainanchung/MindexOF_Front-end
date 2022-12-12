@@ -34,3 +34,18 @@
     border: 1px solid $Cloud;
     border-radius: 20px; 
   }
+
+  @mixin mobile-secondaryBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Josefin Sans";
+    font-weight: 200;
+    font-size: 0.825rem;
+    line-height: 22px;
+    color:$Slate;
+    padding: 0.4rem 0.8rem;
+    background: $White;
+    border: 1px solid $Cloud;
+    border-radius: 20px; 
+  }

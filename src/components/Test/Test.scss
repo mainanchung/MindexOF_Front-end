@@ -3,11 +3,14 @@
 @use '../../style/partials/variable' as *;
 
 .test__single{
+
     &-btn{
-        @include table_desck-secondaryBtn;
-        display: flex;
-        justify-content: center;
-        align-items: center;   
-    }
+        @include desktop{
+            @include table_desck-secondaryBtn;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }   
+        }   
 }
 

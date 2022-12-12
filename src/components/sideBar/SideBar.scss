@@ -8,13 +8,13 @@
     height: 100hv;
     padding: 3rem;
     display: flex;
-    border-right: 1px solid $Cloud;
 
     &__container{
         margin-top: 80%;
         display: flex;
         flex-direction: column;
         justify-content: center; 
+       
     }
     &__links{
         display: flex;

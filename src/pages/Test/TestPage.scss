@@ -3,68 +3,115 @@
 @use '../../style/partials/variable' as *;
 
 
-
-.hero {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 50%;   
-}
-
 .test1, .test2, .test3, .test4{
-    margin: 60vh 0;
+    @include desktop{ 
+        margin: 60vh 0;
+        width: 70%;
+    }  
 }
 
 .test{
-    &__body{
-        padding: 3rem 8rem;
+
+    &__hero{
+        @include desktop{
+            display: flex;
+            justify-content: flex-end;
+        }
+ 
+        &--text {
+            @include desktop{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                width: 50%;   }  
+        }
+
+        &--imgbox{
+            @include desktop{
+                width: 35rem;
+                height: 35rem;
+                overflow: hidden;
+                margin-left: 4rem;
+                margin-top: 5rem;
+            }
+        }
+
+        &--img{
+            @include desktop{
+                height: 31rem;
+                margin-left: -158px;
+            }
+            
+        }
     }
 
+    &__body{
+        @include desktop{
+            padding: 3rem 6rem;}   
+    }
     &__title{
         font-family:"Lovelace";
+        color: $Graphite;
         font-weight:400;
         font-style:normal;
-        font-size:3.5rem;
-        line-height: 4.5rem;
+
+        @include desktop{
+            font-size:3.5rem;
+            line-height: 5rem;
+        }   
     }
 
     &__intro{
         font-weight:200;
-        font-size: 1.1rem;
-        line-height: 2rem;
         color: $Slate;
-        margin-bottom: 3rem;
+        @include desktop{
+            font-size: 1.1rem;
+            line-height: 2rem;
+            margin-bottom: 3rem;
+        }
     }
     
     &__single{
-        padding-bottom: 1.5rem;
-        max-width: 24rem;
+        @include desktop{
+            padding-bottom: 1.5rem;
+            max-width: 24rem;
+        } 
         h2{
             font-family:"Lovelace";
             font-weight:400;
             font-style:normal;
-            font-size:1.5rem;
-            line-height: 2rem;
+            @include desktop{
+                font-size:1.5rem;
+                line-height: 2rem;
+            } 
         }
     }
+
     &__option{
         font-weight:200;
-        font-size: 1.1rem;
         color: $Slate;
+        @include desktop{
+            font-size: 1.1rem;
+        }   
     }
 
     &__start-btn{
-        @include table_desck-secondaryBtn;
-        width: 40%;
-        display: flex;
-        justify-content: center;
+        @include mobile-secondaryBtn;
+        @include desktop{ 
+            @include table_desck-secondaryBtn;
+            width: 40%;
+            display: flex;
+            justify-content: center;}
     }
     &__finish-btn{
-        @include table_desck-secondaryBtn;
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
+        @include mobile-secondaryBtn;
+        @include desktop{
+            @include table_desck-secondaryBtn;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }  
     }
 }
 
