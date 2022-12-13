@@ -7,31 +7,28 @@ import axios from 'axios';
 function ResultPage(){
     const userType = useParams().type;
     const[typeData, setTypeData] = useState([])
+
     console.log(userType)
     console.log(typeData)
     useEffect(() => {
-        let mounted = true;
-        if(mounted){
         axios.get(`http://localhost:8080/types/${userType}`).then((response) => {
                 console.log(response.data)
                 setTypeData(response.data)
                }).catch((error)=>{
             console.log(error)
-        })}else{
-            return () => {
-                mounted = false;
-              }
-        }
+        })
     },[])
 
     return(  
-        <>{typeData? 
-        <> 
+        <>
+        {typeData.length? 
         <div className='result__body'>
             <ResultCard
             typeData={typeData}
              userType = {userType}/>
-        </div></>:"Loading..."} </>
+        </div>:
+        <div className='loading'><h1>Loading...</h1></div>}
+        </>
     )
 }
 

@@ -20,7 +20,7 @@ function TestPage(){
     const [currentScore, setCurrentscore] = useState([]);
     const [userType, setUserType] = useState("");
     const navigate = useNavigate();
-    console.log(userType)
+    
     console.log(currentScore)  
 
     const getTotal = (e) => {
@@ -41,13 +41,16 @@ function TestPage(){
           console.log(totalForEachType)
           setCurrentscore(totalForEachType) 
             let type = '';
-            type += (currentScore.e >= currentScore.i) ? "E" : "I";
-            type += (currentScore.s >= currentScore.n) ? "S" : "N";
-            type += (currentScore.t >= currentScore.f) ? "T" : "F";
-            type += (currentScore.j >= currentScore.p) ? "J" : "P";
+            console.log(totalForEachType.e +">="+ totalForEachType.i);
+            type += (totalForEachType.e >= totalForEachType.i||0) ? "E" : "I";
+            type += (totalForEachType.s >= totalForEachType.n||0) ? "S" : "N";
+            type += (totalForEachType.t >= totalForEachType.f||0) ? "T" : "F";
+            type += (totalForEachType.j >= totalForEachType.p||0) ? "J" : "P";
         setUserType(type)
-        navigate(`/test/${userType}`)
+        console.log(type)
+        navigate(`/test/${type}`)
     }
+    console.log(userType)
 
    
 

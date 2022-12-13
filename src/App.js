@@ -3,11 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
 import ResultPage from './pages/Result/ResultPage';
+import Types from './pages/Types/Types';
+import SingleType from './pages/SingleType/SingleType';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Routes>
 
           <Route
@@ -27,12 +30,17 @@ function App() {
 
           <Route
             path = '/types'
-            element = {<typesPage/>}
+            element = {<Types/>}
           />
 
           <Route
             path = '/types/:id'
-            element = {<typesPage/>}
+            element = {<SingleType/>}
+          />
+
+          <Route
+          path = '/types/:id/:career'
+          element = {<SingleType/>}
           />
          
         </Routes>

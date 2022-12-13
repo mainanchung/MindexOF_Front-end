@@ -33,6 +33,13 @@
     background: $White;
     border: 1px solid $Cloud;
     border-radius: 20px; 
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      border:none;
+      color:$White;
+      background: $Slate;    
+    }
   }
 
   @mixin mobile-secondaryBtn {
@@ -48,4 +55,11 @@
     background: $White;
     border: 1px solid $Cloud;
     border-radius: 20px; 
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      border:none;
+      color:$White;
+      background: $Slate;    
+    }
   }

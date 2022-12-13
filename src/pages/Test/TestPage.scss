@@ -75,7 +75,6 @@
         @include desktop{
             margin-bottom: 1.8rem;
             max-width: 24rem;
-            padding-left: 1rem;
         } 
         h2{
             font-family:"Lovelace";
@@ -114,6 +113,7 @@
 
     &__start-btn{
         @include mobile-secondaryBtn;
+
         @include desktop{ 
             @include table_desck-secondaryBtn;
             width: 40%;

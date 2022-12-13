@@ -3,61 +3,62 @@
 @use '../../style/partials/variable' as *;
 
 
-.type-card{
-    padding: 1rem;
 
-    &__box{
-            border-radius: 20px;
-            background-color: rgb(255, 255, 255, 0.9);
-            padding: 1rem;
-            box-shadow: 7px 7px 15px -4px rgba(200,202,204,1);
-        @include tablet{
-            padding: 2rem;
-            margin: 0 auto;
-            width: 50%;
-            }
-            @include desktop{
-                display: flex;
-                width: 90%;
-            }
-        }
+.type{
 
+    &__container{
+        padding: 0 2rem 2rem 2rem;
+        background: linear-gradient(-45deg, #fff8e2, #ffe0ec, #e4f8ff, #e4fff9);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        } 
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+}
+
+.type{   
+    @include desktop{
+        grid-area: 2 / 1 / 7 / 6;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255, 0.8);
+        padding: 2.5rem;
+        display: flex;
+        
         &__content{
-            padding: 1rem;
-            @include tablet{
-                padding: 2rem;
-                width: 50%;
-            }
-            @include desktop{
-             margin-left: 1rem;
-            }
+            margin-right: 1.5rem;
         }
-
-        &__image-box{
-            @include desktop{
-                width: 35rem;
-                height: 45rem;
-                overflow: hidden;
-                margin: 1rem auto;
-                margin-right: 4rem;
-                margin-top: 5rem;
-            }
+        &--image{
+            width: 60%;
+            margin-top: 3rem;
+            margin-right: -2rem;
         }
-       
+    }  
         &__image{
             margin: 1rem auto;
             @include tablet{
-                width:18rem ; 
+                width:15rem ; 
             } 
 
             @include desktop{
                 display: flex;
-                width:30rem ; 
+                width:20rem ; 
             }
         }
-
-
-        &__type{
+        &__type-name{
             margin-top: 1rem;
             border-bottom: dashed 1px $Slate;
         }
@@ -68,8 +69,8 @@
         font-weight:400;
         font-style:normal;
         @include tablet{
-            font-size:2.5rem;
-            line-height: 3rem;
+            font-size:2rem;
+            line-height: 1rem;
         }
     }
     &__subtitle{
@@ -90,11 +91,16 @@
             font-size: 1rem;
             line-height: 1.2rem;
             margin: 1rem 0;
-            
             border-bottom: dashed 1px $Slate;
         }
     }
-     &__box-title{
+
+    &__box{
+        @include tablet{
+            border-right:1px solid $Cloud;
+        }
+    }
+    &__box-title{
         font-family:"Lovelace";
         font-weight:400;
         color: $Slate;
@@ -103,10 +109,7 @@
             margin-bottom: 0.5rem;
         }
     }
-    // &__traits, &__career{
-    // }
-
-    &__trait, &__job{
+    &__trait{
         font-size: 0.7rem;
         font-weight:200;
         color: $Slate;
@@ -114,42 +117,25 @@
         border: 1px solid $Cloud;
         border-radius: 10px;
         text-align: center;   
-        width: 40%;
         transition: 0.1s;  
         &:hover{
             cursor: crosshair;
             border:none;
             color:$White;
             background: $Cloud;    
-          }   
+        }   
         @include tablet{
             padding: 0.35rem;
             font-size: 0.8rem;
             line-height: 1rem;
             margin: 0 0.5rem;
+            width: 35%;
         }
     }
 
-    &__traits-list, &__jobs-list{
+    &__traits-list{
         display: inline-flex;
         flex-wrap: wrap;
         gap: 0.3rem;
-    }
-
-    &__btn{
-        margin: 2.5rem auto;
-        width: 45%;
-        @include mobile-secondaryBtn;
-        justify-content: center;
-        @include tablet{
-            @include table_desck-secondaryBtn;
-            margin-top:3.5rem;
-            width: 55%;
-        }
-        &-link{
-            text-decoration: none;
-        }
-    }
+    } 
 }
-
-    

@@ -17,7 +17,7 @@ const allTests = quiz
 
    const handleChange = (e) => {
     setAnswers({...answers, [e.target.name]: e.target.value})
-    collectAnswers({...allAnswers,[class_name]:answers})
+    // collectAnswers({...allAnswers,[class_name]:answers})
   }
   
 return(
@@ -48,7 +48,7 @@ return(
                     </div>
                 
             )}
-           <Link activeClass="active" to={scrollId} spy={true} smooth={true}><button onClick={handleSubmit} type="submit" className='test__single-btn'> Next </button></Link>
+           <Link activeClass="active" to={scrollId} spy={true} smooth={true}><button onClick={handleSubmit}  className='test__single-btn'> Next </button></Link>
     </div>
     )          
 }
