@@ -70,7 +70,7 @@
         font-style:normal;
         @include tablet{
             font-size:2rem;
-            line-height: 1rem;
+            line-height: 3rem;
         }
     }
     &__subtitle{
@@ -97,6 +97,7 @@
 
     &__box{
         @include tablet{
+            width: 30%;
             border-right:1px solid $Cloud;
         }
     }

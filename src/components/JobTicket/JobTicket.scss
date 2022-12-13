@@ -1,0 +1,14 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+
+.job-ticket{
+    &__container{
+        margin: 1rem;
+        border: solid 0.5px $Cloud;
+        border-radius: 10px;
+        padding: 2rem;
+    }
+}
+
