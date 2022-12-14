@@ -25,11 +25,12 @@
     }
 
     &__cards{
+        margin-top: 2rem;
         display: flex;
         justify-content: center;
         width: fit-content;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 6rem;
         &--link{
             text-decoration: none;
         }
@@ -61,8 +62,8 @@
        flex-direction: column;
        justify-content: flex-end;
         margin: 0.5rem;
-        width: 10rem;
-        height: 13rem;
+        width: 12rem;
+        height: 14rem;
         background-color:$White;
         background-size: 6rem ;
         background-position: center 20px;
@@ -74,6 +75,6 @@
 
     &__cards--single:hover{
         box-shadow: 4px 4px 10px -4px rgba(200,202,204,1);
-        transform:scale(1.2);
+        transform:scale(1.3);
     }
 }

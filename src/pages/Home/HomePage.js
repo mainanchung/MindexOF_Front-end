@@ -2,16 +2,12 @@ import './HomePage.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SideBar from '../../components/sideBar/SideBar';
 import Header from '../../components/Header/Header';
 import heroImg from '../../Assetes/image/DIRECTION.svg'
 
 
-
-
 function HomePage(){
-   
-   
+
     return( 
         <> 
         <div className='home__container'>

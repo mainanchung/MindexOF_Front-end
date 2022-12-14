@@ -3,9 +3,7 @@
 @use '../../style/partials/variable' as *;
 
 
-
-.type{
-
+.type{  
     &__container{
         padding: 0 2rem 2rem 2rem;
         background: linear-gradient(-45deg, #fff8e2, #ffe0ec, #e4f8ff, #e4fff9);
@@ -28,9 +26,6 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
-}
-
-.type{   
     @include desktop{
         grid-area: 2 / 1 / 7 / 6;
         border-radius: 20px;
@@ -101,6 +96,8 @@
             border-right:1px solid $Cloud;
         }
     }
+
+
     &__box-title{
         font-family:"Lovelace";
         font-weight:400;
@@ -140,3 +137,5 @@
         gap: 0.3rem;
     } 
 }
+
+

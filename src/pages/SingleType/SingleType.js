@@ -14,10 +14,10 @@ function SingleType(){
     const [defaultJob, setDefaultJob] = useState("")
     const [currentJobData, setCurrentJobData] = useState([])
     const [targetType, setTargetType] = useState([])
-    // console.log(targetType)
-    // console.log(defaultJob)
-    console.log(currentJobData)
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [value, setValue] = useState("");
     
+    //get jobs based on target type's data.
     const getJobs = (career) => {
         axios.post(`http://localhost:8080/jobs/search`, 
         {
@@ -25,11 +25,12 @@ function SingleType(){
         }
         ).then((response) => {
             setCurrentJobData(response.data.jobs)
+            setIsLoaded(true)
         }).catch((error) => {
             console.log(error)
         })
     }
-
+    //get target type data
     useEffect(() => {
         axios.get(`http://localhost:8080/types/${singleType}`).then((response) => {
             setTargetType(response.data)
@@ -40,8 +41,16 @@ function SingleType(){
                 console.log(error)
             })
     },[])
-    return( 
 
+    //search function
+
+    const onSearch = (input) => {
+        setValue(input);
+    // our api to fetch the search result
+    }
+
+
+    return( 
         <>
         {targetType.length?
         <>
@@ -72,20 +81,44 @@ function SingleType(){
                         </div> 
 
                         <div className='jobs'>
-                            <div className='jobs__search-box'>
-                            <input
-                                type="search"
-                                placeholder="Search here"
-                                value={defaultJob}/>
+                            <h2 className='jobs__title'>Let's Explore Your Potential Career Paths !</h2>
+                            
+                            <div className='jobs__search-container'>
+                                <div className='jobs__search-box'>
+                                    <input
+                                        className='jobs__search-input'
+                                        type="text"
+                                        placeholder={defaultJob}
+                                        value={value}/>
+                                    <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>    
+                                </div>
+                                <div className="jobs__search--dropdown">
+                                    {targetType.length?
+                                        targetType[0].career.map((job) => 
+                                            <div
+                                            onClick={() => onSearch(job)}
+                                            className="jobs__search--row"
+                                            key={job}
+                                            >
+                                            {job}
+                                            </div>
+                                            )
+                                    : ""}
                             </div>
+                            </div>    
+
                           <div className='jobs__ticket-list'>
-                            {currentJobData.map( job => {
-                                <JobTicket
-                                 key={job.id}
-                                 job = {job}/>
-                            })}
-                            
-                            
+                            {
+                                isLoaded ? 
+                                currentJobData.map((job) => 
+                                    <JobTicket
+                                        key={job.id}
+                                        job = {job}
+                                    />    
+                                ) 
+                                : 
+                                <div className='loading'><h1>Loading...</h1></div>
+                            }
                             </div>  
 
                         </div>

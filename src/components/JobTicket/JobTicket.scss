@@ -3,12 +3,86 @@
 @use '../../style/partials/variable' as *;
 
 
+.jobs{
+    color: $Graphite;
+    padding: 1.5rem;
+    &__ticket-list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+    }
+    &__title{
+        font-family:"Lovelace";
+        color: $Graphite;
+        font-weight:400;
+        font-style:normal;
+        @include tablet{
+            font-size:1rem;
+            line-height: 3rem;
+        }
+    }
+
+    &__search
+    {
+        &-container{
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        }
+
+        &--dropdown{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $Cloud;
+
+            &:empty {
+                border: none;
+              }
+        }
+    }
+
+
+}
+
 .job-ticket{
+    
     &__container{
-        margin: 1rem;
+        width:23rem;
+        height: 15rem;
+        display: flex;
+        margin-top: 1rem;
         border: solid 0.5px $Cloud;
         border-radius: 10px;
-        padding: 2rem;
+        padding: 1rem;
+        background-color: $White;
+        box-shadow: 3px 3px 6px -3px rgba(200,202,204,1);
+    }
+
+    &__content{
+        width: 75%;
+        height: 80%;
+    }
+
+    &__tags{
+        display: flex;
+    }
+    &__function{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-left:1px dashed $Slate;
+        padding: 0 0 1rem 1rem;
+    }
+    &__icon{
+        width: 1rem;
+    }
+    &__url{
+        text-decoration: none;
+    }
+    &__btn{
+        @include table_desck-secondaryBtn;
     }
 }
 

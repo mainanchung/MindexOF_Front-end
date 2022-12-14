@@ -1,7 +1,6 @@
 import './Types.scss'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SideBar from '../../components/sideBar/SideBar';
 import Header from '../../components/Header/Header';
 import axios from 'axios';
 

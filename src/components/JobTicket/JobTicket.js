@@ -1,10 +1,11 @@
 import './JobTicket.scss'
+import likeIcon from '../../Assetes/icon/like.svg'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-function JobTicket({job}){
-    console.log(job)
+function JobTicket({key,job}){
+    console.log(job.salary_min)
    
     return( 
      
@@ -13,18 +14,18 @@ function JobTicket({job}){
              {/* <div className='job-ticket__color'></div> */}
                 <div className='job-ticket__content'>
                     <p className='job-ticket__company'>{job.company.display_name}</p>
-                        <h2 className='job-ticket__title'>{job.company.title}</h2>
-                        <p className='job-ticket__salary'></p>
-                        <p className='job-ticket__salary'>{job.location.area[0]}</p>
+                        <h3 className='job-ticket__title'>{job.title}</h3>
+                        {job.salary_min? <p className='job-ticket__salary'>{job.salary_min} / year</p> : ""}
+                        <p className='job-ticket__location'>{job.location.area[1]}, {job.location.area[0]}</p>
                     <div className='job-ticket__tags'>
-                    <p className='job-ticket__tag'>{job}</p>
-                    <p classname='job-ticket__tag'>category.label</p>
+                        <p className='job-ticket__tag'>{job.contract_time}</p>
+                        <p className='job-ticket__tag'>{job.category.label}</p>
                     </div>
-                 <div className='job-ticket__function'>
-                    <img className='job-ticket__icon'src='' alt='like-icon'/>
-                    <NavLink className="job-ticket__link" to="edirect_url"> <button className='job-ticket__btn'>Apply</button></NavLink>
-                </div>   
-                </div>          
+                </div>  
+                <div className='job-ticket__function'>
+                    <img className='job-ticket__icon'src={likeIcon} alt='like-icon'/>
+                    <a className="job-ticket__url" href={job.redirect_url}> <button className='job-ticket__btn'>Apply</button></a>
+                </div>         
             </div>
         </div> 
     )
