@@ -81,7 +81,7 @@ function SingleType(){
                         </div> 
 
                         <div className='jobs'>
-                            <h2 className='jobs__title'>Let's Explore Your Potential Career Paths !</h2>
+                            <h2 className='jobs__title'>Explore Your Potential Career Paths !</h2>
                             
                             <div className='jobs__search-container'>
                                 <div className='jobs__search-box'>
