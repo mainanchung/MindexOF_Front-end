@@ -1,0 +1,16 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+.test__single{
+
+    &-btn{
+        @include desktop{
+            @include table_desck-secondaryBtn;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }   
+        }   
+}
+

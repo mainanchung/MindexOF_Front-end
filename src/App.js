@@ -2,14 +2,17 @@ import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
+import ResultPage from './pages/Result/ResultPage';
+import Types from './pages/Types/Types';
+import SingleType from './pages/SingleType/SingleType';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
+
         <Routes>
-         
+
           <Route
             path = '/'
             element = {<HomePage/>}
@@ -18,6 +21,26 @@ function App() {
           <Route
             path = '/test'
             element = {<TestPage/>}
+          />
+
+          <Route
+            path = '/test/:type'
+            element = {<ResultPage/>}
+          />
+
+          <Route
+            path = '/types'
+            element = {<Types/>}
+          />
+
+          <Route
+            path = '/types/:id'
+            element = {<SingleType/>}
+          />
+
+          <Route
+          path = '/types/:id/:career'
+          element = {<SingleType/>}
           />
          
         </Routes>

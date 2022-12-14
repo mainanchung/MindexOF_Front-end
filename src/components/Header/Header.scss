@@ -1,0 +1,29 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+
+.header{
+    background-color: transparent;
+    @include desktop{
+        grid-area: 1 / 1 / 2 / 6;
+        padding: 3rem 6rem;
+        height: 6rem;
+    }
+   
+    &__links{
+        @include desktop{
+        display: flex;
+        justify-content: flex-end;
+        }  
+    }
+
+    &__link{
+        @include desktop{
+            margin-left:2rem ; 
+        }
+        color: $Graphite;
+        font-weight:200;
+        text-decoration: none;
+    }
+}

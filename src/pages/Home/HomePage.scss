@@ -1,0 +1,87 @@
+@use '../../style/partials/fonts' as *;
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variable' as *;
+
+
+
+.home{
+    &__container{
+        padding: 0 2rem 2rem  2rem;
+        background: linear-gradient(-45deg, #fff8e2, #ffe0ec, #e4f8ff, #e4fff9);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }  
+        
+        @include desktop{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;}
+        }
+        
+
+    &__hero{
+        @include desktop{
+            grid-area: 2 / 1 / 7 / 6;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255, 0.8);
+            padding: 3rem;
+            display: flex;
+           
+            
+            &-content{
+                width: 80%;
+            }
+            &--image{
+                width: 60%;
+                margin-top: 3rem;
+                margin-right: -2rem;
+            }
+        }  
+    }
+    
+    &__title{
+        font-family:"Lovelace";
+        color: $Graphite;
+        font-weight:400;
+        font-style:normal;
+
+        @include desktop{
+        font-size:3rem;
+        line-height: 5rem;
+        }
+    }
+
+    &__intro{
+        font-weight:200;
+        color: $Slate;
+        @include desktop{
+        font-size: 1rem;
+        line-height: 2rem;
+        margin-bottom: 3rem;}
+    }
+
+    &__navigate-btn{
+        @include mobile-secondaryBtn;
+        @include desktop{
+        @include table_desck-secondaryBtn;}
+    }
+    &__link{
+     text-decoration: none;}
+
+}
+
+
+

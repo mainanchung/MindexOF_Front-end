@@ -1,0 +1,55 @@
+[
+    {
+        "id":"13",
+        "question": "Do you...",
+        "options": [
+            {
+                "choice": "Speak easily and at length with strangers",
+                "value": "e"
+            },
+            {
+                "choice": "Find little to say to strangers",
+                "value": "i"
+            }
+        ]
+    },{
+        "id":"14",
+        "question": "Do you go more by...",
+        "options": [
+            {
+                "choice": "Facts",
+                "value": "s"
+            },
+            {
+                "choice": "Principles",
+                "value": "n"
+            }
+        ]
+    },{
+        "id":"15",
+        "question": "Which seems the greater error?",
+        "options": [
+            {
+                "choice": "To be too passionate",
+                "value": "t"
+            },
+            {
+                "choice": "To be too objective",
+                "value": "f"
+            }
+        ]
+    },{
+        "id":"16",
+        "question": "In relationships should most things be...",
+        "options": [
+            {
+                "choice": "Re-negotiable",
+                "value": "j"
+            },
+            {
+                "choice": "Random and circumstantial",
+                "value": "p"
+            }
+        ]
+    }
+]
