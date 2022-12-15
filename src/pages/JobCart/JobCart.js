@@ -9,7 +9,7 @@ const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]
 
 function JobCart(){
     const [savedJobCart, setSavedJobCart] = useState(getJobCartFromLocalStorage);
-    
+
 
     // console.log(savedJobCart)
 
@@ -20,7 +20,7 @@ function JobCart(){
         />
         <div className='cart'>
                 <div className='cart__container'>
-                <h1  className='cart__title'>Job Cart <span>({savedJobCart.length})</span> </h1>
+                <h1  className='cart__title'>My Jobs  <span>({savedJobCart.length})</span> </h1>
                     <div className='cart__list'>
                         {savedJobCart.map(item =>
                             <div className='cart-card'>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
-function Header({handleCartChange}){
+function Header({handleCartChange, jobCartCount}){
    const updateCart = () =>{
     handleCartChange(getJobCartFromLocalStorage)
    }

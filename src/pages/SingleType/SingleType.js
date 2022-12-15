@@ -18,6 +18,7 @@ function SingleType(){
     const [value, setValue] = useState("");
     const [jobCart, setJobCart] = useState(getJobCartFromLocalStorage);
 
+
     //get jobs based on target type's data.
     const getJobs = (career) => {
         axios.post(`http://localhost:8080/jobs/search`, 
@@ -70,7 +71,8 @@ function SingleType(){
         {targetType.length?
         <>
         <div className='type__container'>
-            <Header/>
+            <Header 
+            jobCartCount={jobCart} />
               <div className='type'>
                         <div className='type__box'>
                             <div className='type__image-box'>

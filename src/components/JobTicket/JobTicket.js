@@ -3,11 +3,13 @@ import likeIcon from '../../Assetes/icon/like.svg'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
-function JobTicket({key,job, addJobHandler, jobCart}){
+function JobTicket({key,job, addJobHandler, jobCart, updateCount}){
 
     const addToCart = (selectedJob) =>{
-            addJobHandler([...jobCart, selectedJob])        
+            addJobHandler([...jobCart, selectedJob])
+            updateCount([...jobCart, selectedJob].length)        
     }
 
     return( 
