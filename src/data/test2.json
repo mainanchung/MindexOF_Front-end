@@ -1,0 +1,55 @@
+[
+    {
+        "id":"5",
+        "question": "In phoning, do you...",
+        "options": [
+            {
+                "choice": "Rarely question that it will all be said",
+                "value": "e"
+            },
+            {
+                "choice": "Rehearse what you’ll say",
+                "value": "i"
+            }
+        ]
+    },{
+        "id":"6",
+        "question": "You are more interested in...",
+        "options": [
+            {
+                "choice": "What is actual",
+                "value": "s"
+            },
+            {
+                "choice": "What is possible",
+                "value": "n"
+            }
+        ]
+    },{
+        "id":"7",
+        "question": "In judging others, are you more swayed by...",
+        "options": [
+            {
+                "choice": "Laws than circumstances",
+                "value": "t"
+            },
+            {
+                "choice": "Circumstances than laws",
+                "value": "f"
+            }
+        ]
+    },{
+        "id":"8",
+        "question": "You prefer things to be...",
+        "options": [
+            {
+                "choice": "Settled and decided",
+                "value": "j"
+            },
+            {
+                "choice": "Unsettled and undecided",
+                "value": "p"
+            }
+        ]
+    }
+]
