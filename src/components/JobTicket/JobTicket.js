@@ -5,11 +5,14 @@ import { useEffect, useState } from 'react';
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
-function JobTicket({key,job, addJobHandler, jobCart, updateCount}){
+function JobTicket({job, setJobCart, jobCart}){
 
     const addToCart = (selectedJob) =>{
-            addJobHandler([...jobCart, selectedJob])
-            updateCount([...jobCart, selectedJob].length)        
+        let duplicatedJob = jobCart.find(ele => ele?.id == selectedJob.id)
+           if(!duplicatedJob){
+            setJobCart([...jobCart, selectedJob])
+           }
+       console.log("already existed")
     }
 
     return( 

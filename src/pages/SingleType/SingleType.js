@@ -6,18 +6,17 @@ import JobTicket from '../../components/JobTicket/JobTicket';
 import axios from 'axios';
 
 
-const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
 
-function SingleType(){
+
+function SingleType({ jobCart,setJobCart}){
     const singleType = useParams().id;
     const [defaultJob, setDefaultJob] = useState("")
     const [currentJobData, setCurrentJobData] = useState([])
     const [targetType, setTargetType] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     const [value, setValue] = useState("");
-    const [jobCart, setJobCart] = useState(getJobCartFromLocalStorage);
-
+    
 
     //get jobs based on target type's data.
     const getJobs = (career) => {
@@ -72,7 +71,8 @@ function SingleType(){
         <>
         <div className='type__container'>
             <Header 
-            jobCartCount={jobCart} />
+            jobCart={jobCart}
+            setJobCart={setJobCart} />
               <div className='type'>
                         <div className='type__box'>
                             <div className='type__image-box'>
@@ -136,7 +136,7 @@ function SingleType(){
                                     <JobTicket
                                         key={job.id}
                                         job = {job}
-                                        addJobHandler = {setJobCart}
+                                        setJobCart = {setJobCart}
                                         jobCart = {jobCart}
                                     />    
                                 ) 

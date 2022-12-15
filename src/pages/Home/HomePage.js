@@ -6,12 +6,14 @@ import Header from '../../components/Header/Header';
 import heroImg from '../../Assetes/image/DIRECTION.svg'
 
 
-function HomePage(){
+function HomePage({jobCart}){
 
     return( 
         <> 
         <div className='home__container'>
-            <Header/>
+            <Header
+            jobCart={jobCart}
+            />
                 <div className='home__hero'>
 
                     <div className='home__hero-content'>

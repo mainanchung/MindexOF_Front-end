@@ -4,11 +4,8 @@ import { useEffect, useState } from 'react';
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
-function Header({handleCartChange, jobCartCount}){
-   const updateCart = () =>{
-    handleCartChange(getJobCartFromLocalStorage)
-   }
-   
+function Header({jobCart}){
+ 
     return( 
         <>      
         <div className='header'>
@@ -17,7 +14,7 @@ function Header({handleCartChange, jobCartCount}){
                 <NavLink to={"/"} className='header__link'>Home</NavLink>
                 <NavLink to={"/test"} className='header__link'>Test</NavLink>
                 <NavLink to={"/types"} className='header__link'>All Types</NavLink>
-                <NavLink to={"/cart"} className='header__link' onClick={updateCart}>My Jobs ({getJobCartFromLocalStorage.length})</NavLink>    
+                <NavLink to={"/cart"} className='header__link' >My Jobs {jobCart.length? `(${jobCart.length})`:""}</NavLink>    
                 </div>
              </div>
         </div>
