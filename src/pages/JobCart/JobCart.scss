@@ -39,7 +39,7 @@
             font-size: 1rem;
         }
     }
-
+    //Job Card//
     &-card{
         padding:0 1.5rem;
         display: flex;
@@ -67,10 +67,10 @@
         &__title{
             width: 17rem;
             color: $Graphite;
-            font-weight:400;
+            font-weight:200;
             font-style:normal;
             @include tablet{
-                font-size:1.1rem;
+                font-size:1rem;
                 line-height:1.2rem;
             }
         }

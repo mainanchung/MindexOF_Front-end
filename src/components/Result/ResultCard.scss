@@ -120,14 +120,24 @@
             cursor: crosshair;
             border:none;
             color:$White;
-            background: $Cloud;    
-          }   
+            background: $Green;
+            border: 1px solid $Green;    
+          } 
+
         @include tablet{
             padding: 0.35rem;
             font-size: 0.8rem;
             line-height: 1rem;
             margin: 0 0.5rem;
         }
+    }
+
+    &__job:hover{
+        cursor: crosshair;
+        border:none;
+        color:$White;
+        background: $Pink;
+        border: 1px solid $Pink; 
     }
 
     &__traits-list, &__jobs-list{
