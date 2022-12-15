@@ -7,8 +7,19 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans";
+  position: relative;
 }
 
 *, *::after, *::after {
   box-sizing: border-box;
+}
+
+.resource{
+  color: $Slate;
+  text-decoration: none;
+  position: absolute;
+  font-size: 0.85rem;
+  bottom: 10px;
+  right: 20px;
+  font-weight: 100;
 }
