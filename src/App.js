@@ -5,6 +5,7 @@ import HomePage from './pages/Home/HomePage';
 import ResultPage from './pages/Result/ResultPage';
 import Types from './pages/Types/Types';
 import SingleType from './pages/SingleType/SingleType';
+import JobCart from './pages/JobCart/JobCart';
 
 function App() {
   return (
@@ -41,6 +42,11 @@ function App() {
           <Route
           path = '/types/:id/:career'
           element = {<SingleType/>}
+          />
+
+          <Route
+          path = '/cart'
+          element = {<JobCart/>}
           />
          
         </Routes>

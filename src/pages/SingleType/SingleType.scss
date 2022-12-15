@@ -4,6 +4,18 @@
 
 
 .type{  
+    @include desktop{
+        grid-area: 2 / 1 / 7 / 6;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255, 0.8);
+        padding: 2rem;
+        display: flex;
+        
+        &__content{
+            margin-right: 1.5rem;
+        }
+
+    }  
     &__container{
         padding: 0 2rem 2rem 2rem;
         background: linear-gradient(-45deg, #fff8e2, #ffe0ec, #e4f8ff, #e4fff9);
@@ -26,22 +38,7 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
-    @include desktop{
-        grid-area: 2 / 1 / 7 / 6;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255, 0.8);
-        padding: 2.5rem;
-        display: flex;
-        
-        &__content{
-            margin-right: 1.5rem;
-        }
-        &--image{
-            width: 60%;
-            margin-top: 3rem;
-            margin-right: -2rem;
-        }
-    }  
+   
         &__image{
             margin: 1rem auto;
             @include tablet{
@@ -51,6 +48,10 @@
             @include desktop{
                 display: flex;
                 width:20rem ; 
+            }
+
+            &-box{
+                margin-right: 1rem;
             }
         }
         &__type-name{
@@ -64,7 +65,7 @@
         font-weight:400;
         font-style:normal;
         @include tablet{
-            font-size:2rem;
+            font-size:2.5rem;
             line-height: 3rem;
         }
     }

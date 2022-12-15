@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import JobTicket from '../../components/JobTicket/JobTicket';
 import axios from 'axios';
-import testimg from '../../Assetes/image/test.svg'
 
 
+const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
 
 function SingleType(){
@@ -16,7 +16,8 @@ function SingleType(){
     const [targetType, setTargetType] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     const [value, setValue] = useState("");
-    
+    const [jobCart, setJobCart] = useState(getJobCartFromLocalStorage);
+
     //get jobs based on target type's data.
     const getJobs = (career) => {
         axios.post(`http://localhost:8080/jobs/search`, 
@@ -24,7 +25,7 @@ function SingleType(){
             career: career
         }
         ).then((response) => {
-            setCurrentJobData(response.data.jobs)
+            setCurrentJobData(response.data.jobs||[])
             setIsLoaded(true)
         }).catch((error) => {
             console.log(error)
@@ -43,11 +44,25 @@ function SingleType(){
     },[])
 
     //search function
+    const onChange = (event) => {
+        setValue(event.target.value);
+      };
 
-    const onSearch = (input) => {
+    const onSearchValue = (input) => {
         setValue(input);
     // our api to fetch the search result
     }
+
+    const onSearch = (value) => {
+        getJobs(value)
+        setValue("")
+    }
+
+    //add job to cart
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(jobCart))
+    },[jobCart])
 
 
     return( 
@@ -81,28 +96,33 @@ function SingleType(){
                         </div> 
 
                         <div className='jobs'>
-                            <h2 className='jobs__title'>Explore Your Potential Career Paths !</h2>
+                            <h2 className='jobs__title'>Explore Your Potential Career Paths :</h2>
                             
                             <div className='jobs__search-container'>
                                 <div className='jobs__search-box'>
                                     <input
                                         className='jobs__search-input'
                                         type="text"
-                                        placeholder={defaultJob}
-                                        value={value}/>
+                                        onChange={onChange}
+                                        placeholder={`Explore here !   ex. ${defaultJob}`}
+                                        value={value}
+                                    />
                                     <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>    
                                 </div>
                                 <div className="jobs__search--dropdown">
-                                    {targetType.length?
-                                        targetType[0].career.map((job) => 
-                                            <div
-                                            onClick={() => onSearch(job)}
-                                            className="jobs__search--row"
-                                            key={job}
+                     
+                                    {targetType.length && value.length?
+                                        targetType[0].career.filter(ele => ele.toLowerCase().includes(value.toLowerCase() )).map((job) => { 
+                                            console.log('value', value);
+                                            console.log('job', job);
+                                            return <div
+                                                onClick={() => onSearchValue(job)}
+                                                className="jobs__search--row"
+                                                key={job}
                                             >
-                                            {job}
+                                                {job}
                                             </div>
-                                            )
+                                            })
                                     : ""}
                             </div>
                             </div>    
@@ -114,6 +134,8 @@ function SingleType(){
                                     <JobTicket
                                         key={job.id}
                                         job = {job}
+                                        addJobHandler = {setJobCart}
+                                        jobCart = {jobCart}
                                     />    
                                 ) 
                                 : 

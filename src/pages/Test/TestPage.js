@@ -11,7 +11,7 @@ import axios from 'axios';
 import Header from '../../components/Header/Header'
 import heroimg from '../../Assetes/image/HOME_img-01.svg'
 import test1img from '../../Assetes/image/star-partial.svg'
-import test2img from '../../Assetes/image/work2.svg'
+import test2img from '../../Assetes/image/work_chat.svg'
 import test3img from '../../Assetes/image/work1.svg'
 import test4img from '../../Assetes/image/clients.svg'
 

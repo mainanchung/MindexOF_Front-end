@@ -9,8 +9,6 @@ import axios from 'axios';
 
 function Types(){
    const [allTypes, setAlltypes] = useState([])
-   console.log(allTypes)
-
    useEffect(() => {
     axios.get(`http://localhost:8080/types`).then((response) => {
             setAlltypes(response.data)

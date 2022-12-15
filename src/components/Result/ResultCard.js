@@ -1,6 +1,5 @@
 import './ResultCard.scss'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
-import testimg from '../../Assetes/image/ESFP.svg'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
