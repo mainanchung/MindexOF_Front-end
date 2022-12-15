@@ -104,7 +104,7 @@ function SingleType(){
                                         className='jobs__search-input'
                                         type="text"
                                         onChange={onChange}
-                                        placeholder={`Explore here !   ex. ${defaultJob}`}
+                                        placeholder={`Explore here   (ex. ${defaultJob})`}
                                         value={value}
                                     />
                                     <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>    

@@ -16,8 +16,8 @@ function Header({handleCartChange}){
                 <div className='header__links'>
                 <NavLink to={"/"} className='header__link'>Home</NavLink>
                 <NavLink to={"/test"} className='header__link'>Test</NavLink>
-                <NavLink to={"/types"} className='header__link'>All Personalities</NavLink>
-                <NavLink to={"/cart"} className='header__link' onClick={updateCart}>Job cart</NavLink>    
+                <NavLink to={"/types"} className='header__link'>All Types</NavLink>
+                <NavLink to={"/cart"} className='header__link' onClick={updateCart}>My Jobs ({getJobCartFromLocalStorage.length})</NavLink>    
                 </div>
              </div>
         </div>

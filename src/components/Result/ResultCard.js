@@ -46,7 +46,7 @@ function ResultCard({userType, typeData}){
                                 </div>
 
                             </div>
-                            <NavLink to={"/types/"+ userType } className='type-card__btn-link'><button className='type-card__btn'>Find out more !</button></NavLink>
+                            <NavLink to={"/types/"+ userType } className='type-card__btn-link'><button className='type-card__btn'>Find out more </button></NavLink>
                         </div> 
          
                         
