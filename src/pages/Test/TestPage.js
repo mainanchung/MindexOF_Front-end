@@ -56,9 +56,9 @@ function TestPage( {jobCart}){
 
     return( 
         <> 
+        <section className='test__body'>  
         <Header
-        jobCart={jobCart}/>  
-        <section className='test__body'>   
+        jobCart={jobCart}/>   
             <div className='test__hero'>
                     <div className='test__hero--text'>
                         <h1  className='test__title'>Finding Yourself<br/> Before<br/> Finding Your Job.</h1>

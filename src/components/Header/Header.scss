@@ -4,26 +4,57 @@
 
 
 .header{
-    background-color: transparent;
-    @include desktop{
+    
+    @include tablet{
         grid-area: 1 / 1 / 2 / 6;
-        padding: 3rem;
         height: 6rem;
     }
    
     &__links{
-        @include desktop{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0 ;
+        @include tablet{
         display: flex;
         justify-content: flex-end;
-
         }
         &--home, &--test, &--type, &--cart{
             display: flex;
-            align-items: baseline;
+            flex-direction: column;
+            align-items: center;
+            
+            @include tablet{
+                flex-direction: row;
+                margin-right: 1rem;
+                align-items: baseline;
+            }
         }
         &--icon{
+            filter: brightness(0) saturate(100%) invert(36%) sepia(31%) saturate(323%) hue-rotate(184deg) brightness(101%) contrast(90%);
             width: 20px;
-            margin-right: 0.5rem;
+            @include tablet{ 
+            display:block;
+            width: 20px;
+            margin-right: 0.5rem;}
+
+        }
+
+        &--text{
+            // border-bottom: dashed 1px $Slate;
+            padding-bottom: 0.5rem;
+            font-size: 0.8rem;
+            transition: 0.2s;
+            
+
+            &:hover{
+                font-weight: 600;
+                color: $Slate;
+            }
+            @include tablet{
+                border:none;
+                display: inline-block;
+                width: 4.5rem;
+            }
         }
     }
 

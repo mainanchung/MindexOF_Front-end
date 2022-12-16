@@ -18,28 +18,28 @@ function Header({jobCart}){
                     <NavLink to={"/"} className='header__link'>
                         <div className='header__links--home'>
                             <img className='header__links--icon' src={homeIcon} alt='cartIcon'/>
-                            Home
+                            <p className='header__links--text header__links--Home'>Home</p>
                         </div>
                     </NavLink>
 
                     <NavLink to={"/test"} className='header__link'>
                         <div className='header__links--test'>
                             <img className='header__links--icon' src={testIcon} alt='testIcon'/>
-                            Test
+                            <p className='header__links--text header__links--text'>Test</p>
                         </div>
                     </NavLink>
 
                     <NavLink to={"/types"} className='header__link'>
                         <div className='header__links--type'>
                             <img className='header__links--icon' src={personIcon} alt='personIcon'/>
-                            All Types
+                            <p className='header__links--text header__links--type'>All Types</p>
                         </div>
                     </NavLink> 
 
                     <NavLink to={"/cart"} className='header__link' >
                         <div className='header__links--cart'>
                             <img className='header__links--icon' src={cartIcon} alt='cartIcon'/>
-                            My Jobs {jobCart.length? `(${jobCart.length})`:""}  
+                            <p className='header__links--text header__links--cart'>My Jobs {jobCart.length? `(${jobCart.length})`:""}  </p>
                         </div>
                     </NavLink>   
 

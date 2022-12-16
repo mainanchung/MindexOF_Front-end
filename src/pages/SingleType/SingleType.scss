@@ -4,23 +4,32 @@
 
 
 .type{  
-    @include desktop{
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    padding: 2rem 1rem;
+    
+    @include tablet{
         grid-area: 2 / 1 / 7 / 6;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255);
-        padding: 2rem;
-        display: flex;
-        
-        &__content{
+        display: flex; 
+        padding-right:0;
+    }
+
+    @include desktop{
+        padding: 2rem; 
+    }
+    &__content{
+        margin-right: 1rem;
+        @include desktop{
             margin-right: 1.5rem;
         }
-
     }  
+
     &__container{
-        padding: 0 2rem 2rem 2rem;
-        background: linear-gradient(-45deg, #fff0be, #ffc2d9, #c5efff, #cdfff4);
+        background: linear-gradient(-45deg, #fbe9b1, #fbccde, #b6e7fa, #b5e1d7);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
+        padding: 1rem;
     
         @keyframes gradient {
             0% {
@@ -33,17 +42,25 @@
                 background-position: 0% 50%;
             }
         } 
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        @include tablet{ 
+             padding: 0 2rem 2rem 2rem; 
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;}
+      
     }
    
         &__image{
-            margin: 1rem auto;
+            width: 100%;
             @include tablet{
-                width:15rem ; 
+                margin: 1rem auto;    
             } 
+            
+            @include desktop{
+                width:15rem ;
+            }
+            
 
             @include desktop{
                 display: flex;
@@ -64,11 +81,19 @@
         color: $Graphite;
         font-weight:400;
         font-style:normal;
+        font-size:1.8rem;
+
         @include tablet{
+            font-size:1.8rem;
+        }
+
+
+        @include desktop{
             font-size:2.5rem;
             line-height: 3rem;
         }
-    }
+
+        }
     &__subtitle{
         font-family:"Lovelace";
         color: $Graphite;
@@ -82,23 +107,22 @@
         font-weight:200;
         color: $Slate;
         padding-bottom: 1rem;
+        line-height: 1.2rem;
         
         @include tablet{
-            font-size: 1rem;
+            font-size:0.9rem;
             line-height: 1.2rem;
             margin: 1rem 0;
             border-bottom: dashed 1px $Cloud;
         }
     }
-
     &__box{
         @include tablet{
+            margin-right: 1rem;
             width: 30%;
             border-right:1px solid $Cloud;
         }
     }
-
-
     &__box-title{
         font-family:"Lovelace";
         font-weight:400;
@@ -109,14 +133,16 @@
         }
     }
     &__trait{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         font-weight:200;
         color: $Slate;
-        padding: 0.2rem;
+        padding: 0.3rem;
         border: 1px solid $Cloud;
         border-radius: 10px;
         text-align: center;   
-        transition: 0.1s;  
+        width: 40%;
+        transition: 0.1s;
+        margin: 0.5rem  0 ; 
         &:hover{
             cursor: crosshair;
             border:none;
@@ -128,15 +154,23 @@
             padding: 0.35rem;
             font-size: 0.8rem;
             line-height: 1rem;
-            margin: 0 0.5rem;
-            width: 35%;
+            margin: 0 ; 
+            width: 80%;
         }
+        @include desktop{
+            width: 40%;}
     }
 
     &__traits-list{
         display: inline-flex;
         flex-wrap: wrap;
-        gap: 0.3rem;
+        gap: 0 2rem;
+        margin-bottom: 3rem;
+
+        @include tablet{
+            gap:0.5rem;
+        }
+        
     } 
 }
 

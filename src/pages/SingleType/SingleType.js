@@ -114,9 +114,7 @@ function SingleType({ jobCart,setJobCart}){
                                 <div className="jobs__search--dropdown">
                      
                                     {targetType.length && value.length?
-                                        targetType[0].career.filter(ele => ele.toLowerCase().includes(value.toLowerCase() )).map((job) => { 
-                                            console.log('value', value);
-                                            console.log('job', job);
+                                        targetType[0].career.filter(ele => ele.toLowerCase().includes(value.toLowerCase() )).map((job) => {
                                             return <div
                                                 onClick={() => onSearchValue(job)}
                                                 className="jobs__search--row"

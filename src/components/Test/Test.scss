@@ -5,11 +5,14 @@
 .test__single{
 
     &-btn{
-        @include desktop{
+        @include mobile-secondaryBtn;
+        margin: 0 auto;
+        @include tablet{
             @include table_desck-secondaryBtn;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 ;
             }   
         }   
 }
