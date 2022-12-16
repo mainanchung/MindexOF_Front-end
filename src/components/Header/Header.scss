@@ -4,10 +4,51 @@
 
 
 .header{
-    
+
     @include tablet{
         grid-area: 1 / 1 / 2 / 6;
         height: 6rem;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__LOGO{
+        margin: 0 auto;
+        width: 40px;
+        filter: brightness(0) saturate(100%) invert(36%) sepia(31%) saturate(323%) hue-rotate(184deg) brightness(101%) contrast(90%);
+
+        @include tablet{
+            margin-left:1rem;
+        }
+
+        &--box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include tablet{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+        }
+        &--text{
+            color: $Slate;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            @include tablet{
+                margin:0 1rem;
+            }
+        }
     }
    
     &__links{
@@ -36,7 +77,6 @@
             display:block;
             width: 20px;
             margin-right: 0.5rem;}
-
         }
 
         &--text{
@@ -45,7 +85,6 @@
             font-size: 0.8rem;
             transition: 0.2s;
             
-
             &:hover{
                 font-weight: 600;
                 color: $Slate;

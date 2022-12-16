@@ -4,6 +4,7 @@ import cartIcon from '../../Assetes/icon/label.svg';
 import homeIcon from '../../Assetes/icon/home.svg';
 import personIcon from '../../Assetes/icon/person2.svg';
 import testIcon from '../../Assetes/icon/test2.svg';
+import LOGO from '../../Assetes/icon/LOGO.svg';
 
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
@@ -13,7 +14,11 @@ function Header({jobCart}){
     return( 
         <>      
             <div className='header'>
-                <div>
+                <div className='header__container'>
+                    <div  className='header__LOGO--box'>
+                    <img className='header__LOGO' src={LOGO} alt='LOGO'/>
+                    <p className='header__LOGO--text'>MindexOF</p>
+                    </div>
                     <div className='header__links'>
                     <NavLink to={"/"} className='header__link'>
                         <div className='header__links--home'>
