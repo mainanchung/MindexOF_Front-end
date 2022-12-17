@@ -15,11 +15,10 @@ html, body {
 }
 
 .resource{
+  display: none;
+  position: fixed;
   color: $Slate;
   text-decoration: none;
-  position: absolute;
   font-size: 0.85rem;
-  bottom: 1px;
-  right: 20px;
   font-weight: 100;
 }

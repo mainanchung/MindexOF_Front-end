@@ -47,7 +47,7 @@
             width: 100%;
             margin-bottom: 2rem;
             @include tablet{
-                width: 90%;
+                width: 97%;
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 1rem;
@@ -83,18 +83,24 @@
             display:flex;
         }
         &-input{
+            padding: 0.4rem ;
             width: 100%;
             font-weight: 200;
-            font-size: 0.825rem;
+            font-size: 0.5rem;
             line-height: 22px;
+            letter-spacing: -1px;
             color:$Slate;
-            padding: 0.4rem 0.8rem;
             background: $White;
             border: 1px solid $Cloud;
             border-right: none;
             border-top-left-radius: 10px;
             font-family: "Josefin Sans";
             font-size: 1rem;
+            @include tablet{
+                letter-spacing:1px;
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
             &::placeholder{
                 font-family: "Josefin Sans"; 
             }
@@ -146,7 +152,7 @@
         font-size:1rem;
         @include tablet{
             font-size:1rem;
-            line-height:1rem;
+            line-height:1.2rem;
         }
     }
 

@@ -6,7 +6,7 @@
 .test1, .test2, .test3, .test4{
     @include tablet{ 
         margin: 40vh 0;
-        width: 70%;
+        width: 65%;
     }  
 }
 .test3{
@@ -135,24 +135,25 @@
             align-items: center;
         }
         @include desktop{ 
+            overflow:visible;
             display: flex;
             flex-direction: row-reverse;}
-       
+
         img{
-            width: 120%;
-            margin-left: -1.8rem;
-            margin-bottom: -2rem;
-            @include tablet{
-                margin-left: 1rem;
-                margin-bottom: -7rem;
-                width: 90%;
+                width: 120%;
+                margin-left: -1.8rem;
+                margin-bottom: -2rem;
+                @include tablet{
+                    margin-left: 1rem;
+                    margin-bottom: -7rem;
+                    width: 90%;
+                }
+                @include desktop{
+                    width:50%;
+                    margin:0 3rem;
+                }  
             }
-            @include desktop{
-                width:55%;
-                margin-right: 1rem;
-            }  
         }
-    }
 
     &-box__2, &-box__4{
         margin-bottom: 50vh;
@@ -164,8 +165,10 @@
             align-items: center;
         }
         @include desktop{
-        display: flex;
-    }
+            display: flex;
+            flex-direction: row;
+            margin-left: 3rem;
+         }
         img{
             margin-left: -30px;
             @include tablet{
@@ -173,7 +176,7 @@
                margin: 0 auto;
             }
             @include desktop{
-            width:55%;}
+            width:50%;}
         }
     }
 

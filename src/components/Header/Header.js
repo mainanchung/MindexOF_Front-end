@@ -15,10 +15,12 @@ function Header({jobCart}){
         <>      
             <div className='header'>
                 <div className='header__container'>
-                    <div  className='header__LOGO--box'>
-                    <img className='header__LOGO' src={LOGO} alt='LOGO'/>
-                    <p className='header__LOGO--text'>MindexOF</p>
-                    </div>
+                    <NavLink to={"/"} className='header__LOGO--link'>
+                        <div  className='header__LOGO--box'>
+                            <img className='header__LOGO' src={LOGO} alt='LOGO'/>
+                            <p className='header__LOGO--text'>MindexOF</p>
+                        </div>
+                    </NavLink>
                     <div className='header__links'>
                     <NavLink to={"/"} className='header__link'>
                         <div className='header__links--home'>

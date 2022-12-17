@@ -7,6 +7,10 @@ const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]
 
 function JobTicket({job, setJobCart, jobCart}){
 
+    const  SalaryFormatter= (num) =>{
+        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+    }
+
     const addToCart = (selectedJob) =>{
         let duplicatedJob = jobCart.find(ele => ele?.id == selectedJob.id)
            if(!duplicatedJob){
@@ -14,6 +18,8 @@ function JobTicket({job, setJobCart, jobCart}){
            }
        console.log("already existed")
     }
+
+
 
     return( 
      
@@ -23,7 +29,7 @@ function JobTicket({job, setJobCart, jobCart}){
                 <div className='job-ticket__content'>
                     <p className='job-ticket__company'>{job.company.display_name}</p>
                         <h3 className='job-ticket__title'>{job.title}</h3>
-                        {job.salary_min? <p className='job-ticket__salary'>{job.salary_min} / year</p> : ""}
+                        {job.salary_min? <p className='job-ticket__salary'>{SalaryFormatter(job.salary_min)} / year</p> : ""}
                         <p className='job-ticket__location'>{job.location.area[1]}  {job.location.area[0]}</p>
                 </div>  
                 <div className='job-ticket__function'>
