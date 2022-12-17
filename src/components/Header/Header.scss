@@ -4,26 +4,114 @@
 
 
 .header{
-    background-color: transparent;
-    @include desktop{
+
+    @include tablet{
         grid-area: 1 / 1 / 2 / 6;
-        padding: 3rem 6rem;
         height: 6rem;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+    }
+
+    &__LOGO{
+        margin: 0 auto;
+        width: 40px;
+        filter: brightness(0) saturate(100%) invert(36%) sepia(31%) saturate(323%) hue-rotate(184deg) brightness(101%) contrast(90%);
+
+        @include tablet{
+            margin-left:1rem;
+        }
+        &--link{
+            text-decoration: none; 
+        }
+        
+        &--box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include tablet{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                
+            }
+            @include desktop{
+                margin-left: 2.5rem;
+            }
+            
+        }
+        &--text{
+            color: $Slate;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            @include tablet{
+                margin:0 1rem;
+            }
+        }
     }
    
     &__links{
-        @include desktop{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0 ;
+        @include tablet{
         display: flex;
         justify-content: flex-end;
-        }  
+        }
+        &--home, &--test, &--type, &--cart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            @include tablet{
+                flex-direction: row;
+                margin-right: 1rem;
+                align-items: baseline;
+            }
+        }
+        &--icon{
+            filter: brightness(0) saturate(100%) invert(36%) sepia(31%) saturate(323%) hue-rotate(184deg) brightness(101%) contrast(90%);
+            width: 20px;
+            @include tablet{ 
+            display:block;
+            width: 20px;
+            margin-right: 0.5rem;}
+        }
+
+        &--text{
+            // border-bottom: dashed 1px $Slate;
+            padding-bottom: 0.5rem;
+            font-size: 0.8rem;
+            transition: 0.2s;
+            
+            &:hover{
+                font-weight: 600;
+                color: $Slate;
+            }
+            @include tablet{
+                border:none;
+                display: inline-block;
+                width: 4.5rem;
+            }
+        }
     }
 
     &__link{
         @include desktop{
-            margin-left:2rem ; 
+            margin-right:2rem ; 
         }
         color: $Graphite;
         font-weight:200;
         text-decoration: none;
     }
+   
 }

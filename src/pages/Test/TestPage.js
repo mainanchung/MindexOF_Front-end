@@ -16,7 +16,7 @@ import test3img from '../../Assetes/image/work1.svg'
 import test4img from '../../Assetes/image/clients.svg'
 
 
-function TestPage(){
+function TestPage( {jobCart}){
     const [currentScore, setCurrentscore] = useState([]);
     const [userType, setUserType] = useState("");
     const navigate = useNavigate();
@@ -56,8 +56,9 @@ function TestPage(){
 
     return( 
         <> 
-        <Header/>  
-        <section className='test__body'>   
+        <section className='test__body'>  
+        <Header
+        jobCart={jobCart}/>   
             <div className='test__hero'>
                     <div className='test__hero--text'>
                         <h1  className='test__title'>Finding Yourself<br/> Before<br/> Finding Your Job.</h1>

@@ -1,5 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {  useState } from 'react';
 import TestPage from './pages/Test/TestPage';
 import HomePage from './pages/Home/HomePage';
 import ResultPage from './pages/Result/ResultPage';
@@ -7,21 +8,27 @@ import Types from './pages/Types/Types';
 import SingleType from './pages/SingleType/SingleType';
 import JobCart from './pages/JobCart/JobCart';
 
+const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
+
 function App() {
+ const [jobCart, setJobCart] = useState(getJobCartFromLocalStorage);
+
   return (
     <div className="App">
+      
       <BrowserRouter>
-
         <Routes>
-
           <Route
             path = '/'
-            element = {<HomePage/>}
+            element = {<HomePage
+              jobCart={jobCart}/>}
           />
 
           <Route
             path = '/test'
-            element = {<TestPage/>}
+            element = {<TestPage
+              jobCart={jobCart}
+              setJobCart={setJobCart}/>}
           />
 
           <Route
@@ -31,22 +38,24 @@ function App() {
 
           <Route
             path = '/types'
-            element = {<Types/>}
+            element = {<Types
+              jobCart={jobCart}
+              setJobCart={setJobCart}/>}
           />
 
           <Route
             path = '/types/:id'
-            element = {<SingleType/>}
-          />
-
-          <Route
-          path = '/types/:id/:career'
-          element = {<SingleType/>}
+            element = {<SingleType
+              jobCart={jobCart}
+              setJobCart={setJobCart}/>}
           />
 
           <Route
           path = '/cart'
-          element = {<JobCart/>}
+          element = {<JobCart
+            jobCart={jobCart}
+            setJobCart={setJobCart}
+          />}
           />
          
         </Routes>

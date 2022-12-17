@@ -36,9 +36,10 @@
     cursor: pointer;
     transition: 0.3s;
     &:hover{
+      border: 1px solid  $Purple;
       border:none;
       color:$White;
-      background: $Slate;    
+      background: $Purple;    
     }
   }
 
@@ -60,6 +61,7 @@
     &:hover{
       border:none;
       color:$White;
-      background: $Slate;    
+      background: $Purple; 
+      border: 1px solid $Purple;   
     }
   }

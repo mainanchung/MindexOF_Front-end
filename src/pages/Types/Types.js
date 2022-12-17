@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-function Types(){
+function Types({jobCart}){
    const [allTypes, setAlltypes] = useState([])
    useEffect(() => {
     axios.get(`http://localhost:8080/types`).then((response) => {
@@ -23,7 +23,8 @@ const divBg = (imgSrc) => ({
     return( 
         <> 
         <div className='types__container'>
-            <Header/>
+            <Header
+            jobCart={jobCart}/>
                 <div className='types__cards'>
                     {allTypes.map(ele =>
                     <NavLink to={`/types/${ele.type}`}  className="types__cards--link">

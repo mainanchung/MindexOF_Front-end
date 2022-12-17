@@ -5,30 +5,55 @@
 
 .jobs{
     color: $Graphite;
-    padding: 0 1.5rem;
+    padding: 2rem 0;
+    border-top: solid 1px $Cloud;
+
+    @include tablet{
+        border:0;
+        margin-left: 1.5rem;
+    }
+
     &__ticket-list{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
+        @include tablet{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+        }
+        
     }
     &__title{
         font-family:"Lovelace";
         color: $Graphite;
         font-weight:400;
         font-style:normal;
-        margin-top: 0%;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+
         @include tablet{
+            font-size:1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        @include desktop{  
+            margin: 0%;
             font-size:1.5rem;
             line-height: 3rem;
         }
     }
 
     &__search{
+
         &-container{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
+            width: 100%;
+            margin-bottom: 2rem;
+            @include tablet{
+                width: 97%;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1rem;
+            }
         }
+
         &--row{
             padding: 0.4rem 0.8rem;
             &:hover{
@@ -49,38 +74,37 @@
             font-weight:200;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
-            margin-bottom: 1rem;
-            
+            margin-bottom: 1rem;     
             &:empty {
                 border: none;
-              }
-
-             
+              }  
         }
-
-        
         &-box{
             display:flex;
         }
         &-input{
+            padding: 0.4rem ;
             width: 100%;
             font-weight: 200;
-            font-size: 0.825rem;
+            font-size: 0.5rem;
             line-height: 22px;
+            letter-spacing: -1px;
             color:$Slate;
-            padding: 0.4rem 0.8rem;
             background: $White;
             border: 1px solid $Cloud;
             border-right: none;
             border-top-left-radius: 10px;
             font-family: "Josefin Sans";
             font-size: 1rem;
-
+            @include tablet{
+                letter-spacing:1px;
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
             &::placeholder{
                 font-family: "Josefin Sans"; 
             }
         }
-
         &--btn{
             @include mobile-secondaryBtn;
             border-radius: 0%;
@@ -91,23 +115,28 @@
             }
         }
     }
-
-
-
-
 }
 
 .job-ticket{
-    
     &__container{
-        width:23rem;
-        height:13rem;
+        max-height: 15rem;
+        margin-bottom: 1rem;
         display: flex;
         border: solid 0.5px $Cloud;
         border-radius: 10px;
         padding: 1rem;
         background-color: $White;
         box-shadow: 3px 3px 6px -3px rgba(200,202,204,1);
+
+        @include tablet{
+            width:25rem;
+            height:11.5rem;
+        }
+
+        @include desktop{
+            width:23rem;
+            height:13rem;
+        }
     }
 
     &__content{
@@ -116,13 +145,14 @@
         height: 80%;
     }
     &__title{
-        color: $Graphite;
+        color: $Slate;
         font-weight:600;
         font-style:normal;
         margin-top: 0%;
+        font-size:1rem;
         @include tablet{
             font-size:1rem;
-            line-height:1rem;
+            line-height:1.2rem;
         }
     }
 
@@ -130,7 +160,12 @@
         color: $Slate;
         font-weight:200;
         font-size:0.8rem;
-        line-height: 0.5rem;
+        line-height: 0.8rem;
+    }
+    &__salary{
+        color: $Purple;
+        font-weight:300;
+        font-size:0.9rem;
     }
 
     &__tags{
@@ -141,7 +176,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
-        border-left:1px dashed $Slate;
+        border-left:1px dashed $Cloud;
         padding-left: 1rem;
     }
     &__icon{
@@ -158,7 +193,6 @@
         @include mobile-secondaryBtn;
         padding:0.2rem 0.5rem;
         border-radius: 10px;
-
     }
 }
 
