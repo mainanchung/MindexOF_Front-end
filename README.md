@@ -45,7 +45,7 @@ nodemon index.js
 - All types: Learn about the 16 various personality types.
 
 
-## Resouces / References
+## Resources / References
 
 - [indeed]
 - [Truity]
