@@ -58,8 +58,7 @@ function SingleType({ jobCart,setJobCart}){
         setValue("")
     }
 
-    //add job to cart
-
+    //add job to cart and store job in local storage
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(jobCart))
     },[jobCart])

@@ -16,7 +16,6 @@ function JobTicket({job, setJobCart, jobCart}){
            if(!duplicatedJob){
             setJobCart([...jobCart, selectedJob])
            }
-       console.log("already existed")
     }
 
 
