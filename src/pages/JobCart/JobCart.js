@@ -15,11 +15,6 @@ function JobCart({jobCart,setJobCart}){
         setJobCart(updatedCart)
     }
 
-    // useEffect(() => {
-    //     localStorage.setItem("cart", JSON.stringify(savedJobCart))
-    // },[jobCart])
-
-
     return( 
         <> 
         <div className='cart'>
