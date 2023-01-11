@@ -2,6 +2,7 @@ import './SingleType.scss'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import locations from '../../data/location.json';
+import loadingIcon from '../../Assetes/icon/Loading.svg'
 import Header from '../../components/Header/Header';
 import JobTicket from '../../components/JobTicket/JobTicket';
 import axios from 'axios';
@@ -23,13 +24,13 @@ function SingleType({ jobCart,setJobCart}){
     const [open, setOpen] = useState(false);
     const [select, setSelect] = useState(false);
    
-    
+    console.log(currentJobData)
 
     //get jobs based on target type's data.
     const getJobs = (career,location) => {
         axios.post(`http://localhost:8080/jobs/search`, 
         {
-            career: career,
+            career:career,
             location:location
         }
         ).then((response) => {
@@ -45,7 +46,7 @@ function SingleType({ jobCart,setJobCart}){
             setTargetType(response.data)
             let defaultCareer = response.data[0].career[0]
             setDefaultJob(defaultCareer)
-            getJobs(defaultCareer)
+            getJobs(defaultCareer,"us")
            }).catch((error)=> {
                 console.log(error)
             })
@@ -56,13 +57,12 @@ function SingleType({ jobCart,setJobCart}){
         setValue(event.target.value);
         setSelect(true);
       };
-    // select job title
+    // select job 
     const onSearchValue = (input) => {
         setValue(input);
         setSelect(false);
     }
 
-   
     //select location
     const onLocationChange = (event) => {
         setLocationValue(event.target.value)
@@ -82,10 +82,10 @@ function SingleType({ jobCart,setJobCart}){
       };
 
    //search button
-      const onSearch = (value) => {
-        getJobs(value)
-        setValue("")
-        setLocationValue("")
+      const onSearch = (value, location) => {
+        getJobs(value,location)
+        // setValue("")
+        // setLocationValue("")
     }
 
 
@@ -185,7 +185,7 @@ function SingleType({ jobCart,setJobCart}){
 
                                 </div>
                                 </div>
-                                <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>  
+                                <button onClick={() => onSearch(value,locationCode)} className="jobs__search--btn"> Search </button>  
                             </div>   
 
                           <div className='jobs__ticket-list'>
@@ -200,14 +200,14 @@ function SingleType({ jobCart,setJobCart}){
                                     />    
                                 ) 
                                 : 
-                                <div className='loading'><h1>Loading...</h1></div>
+                                <div className='loading'><img src={loadingIcon} alt="loading"/></div>
                             }
+                            {/* {currentJobData.length ? "" :<div className='no-data'><p>No result</p></div>} */}
                             </div>  
-
                         </div>
                 </div> 
             </div> </>:
-            <div className='loading'><h1>Loading...</h1></div>}
+            <div className='loading'><img src={loadingIcon} alt="loading"/></div>}
         </>       
      
     )

@@ -17,9 +17,8 @@
         @include tablet{
             display: flex;
             flex-wrap: wrap;
-            gap: 1.25rem;
-        }
-        
+            gap: 1rem;
+        } 
     }
     &__title{
         font-family:"Lovelace";
@@ -47,17 +46,19 @@
             width: 100%;
             display: flex;
             margin-bottom: 2rem;
+            
             @include tablet{
                 width: 90%;
                 // flex-direction: column;
                 margin-bottom: 1rem;
             }
             @include desktop{
-                width: 97%;
+                width: 58vw;
             }
         }
 
         &-box{
+            position: relative;
             width: 10rem;
             border-bottom-left-radius: 10px;
             @include tablet{
@@ -88,9 +89,11 @@
             margin-bottom: 1rem;
             font-size: 0.9rem;
             border-bottom-left-radius: 10px;
+            position: absolute;
+            box-shadow: 3px 3px 6px -3px rgba(200,202,204,1);
             display: none;
             @include tablet{
-                
+              
                 font-size: 1rem;
                 letter-spacing:1px;
                 }          
@@ -131,8 +134,9 @@
         &-box--location{
             border-top: 1px solid $Cloud;
             width: 4.8rem;
+            position: relative;
             @include tablet{
-                width: 23%;
+                width: 28%;
             }
             
         }
@@ -175,6 +179,8 @@
                 font-weight:200;
                 border-bottom-right-radius: 10px;
                 margin-bottom: 1rem;
+                position: absolute;
+                box-shadow: 3px 3px 6px -3px rgba(200,202,204,1);
                 display: none;
                 @include tablet{
                 
@@ -217,7 +223,7 @@
         box-shadow: 3px 3px 6px -3px rgba(200,202,204,1);
 
         @include tablet{
-            width:25rem;
+            width:24rem;
             height:11.5rem;
         }
 

@@ -1,5 +1,6 @@
 import './ResultPage.scss'
 import ResultCard from '../../components/Result/ResultCard';
+import loadingIcon from '../../Assetes/icon/Loading.svg'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -27,7 +28,7 @@ function ResultPage(){
             typeData={typeData}
              userType = {userType}/>
         </div>:
-        <div className='loading'><h1>Loading...</h1></div>}
+        <div className='loading'><img src={loadingIcon} alt="loading"/></div>}
         </>
     )
 }

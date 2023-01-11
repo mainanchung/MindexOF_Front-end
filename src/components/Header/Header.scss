@@ -92,7 +92,7 @@
             padding-bottom: 0.5rem;
             font-size: 0.8rem;
             transition: 0.2s;
-            
+            margin-bottom: 0%;
             &:hover{
                 font-weight: 600;
                 color: $Slate;
@@ -101,7 +101,7 @@
                 border:none;
                 display: inline-block;
                 font-size: 1rem;
-                width: 5.5rem;
+                width: 6rem;
             }
         }
     }
