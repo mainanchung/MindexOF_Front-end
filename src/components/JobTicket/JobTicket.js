@@ -19,8 +19,6 @@ function JobTicket({job, setJobCart, jobCart}){
            }
     }
 
-
-
     return( 
      
         <div className='job-ticket'>

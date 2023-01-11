@@ -1,6 +1,7 @@
 import './SingleType.scss'
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import locations from '../../data/location.json';
 import Header from '../../components/Header/Header';
 import JobTicket from '../../components/JobTicket/JobTicket';
 import axios from 'axios';
@@ -10,19 +11,26 @@ import axios from 'axios';
 
 
 function SingleType({ jobCart,setJobCart}){
+    
     const singleType = useParams().id;
     const [defaultJob, setDefaultJob] = useState("")
     const [currentJobData, setCurrentJobData] = useState([])
     const [targetType, setTargetType] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState("")
+    const [locationValue, setLocationValue] = useState("")
+    const [locationCode, setLocationCode] = useState("")
+    const [open, setOpen] = useState(false);
+    const [select, setSelect] = useState(false);
+   
     
 
     //get jobs based on target type's data.
-    const getJobs = (career) => {
+    const getJobs = (career,location) => {
         axios.post(`http://localhost:8080/jobs/search`, 
         {
-            career: career
+            career: career,
+            location:location
         }
         ).then((response) => {
             setCurrentJobData(response.data.jobs||[])
@@ -46,17 +54,41 @@ function SingleType({ jobCart,setJobCart}){
     //search function
     const onChange = (event) => {
         setValue(event.target.value);
+        setSelect(true);
       };
-
+    // select job title
     const onSearchValue = (input) => {
         setValue(input);
-    // our api to fetch the search result
+        setSelect(false);
     }
 
-    const onSearch = (value) => {
+   
+    //select location
+    const onLocationChange = (event) => {
+        setLocationValue(event.target.value)
+        setOpen(true)
+    }
+
+    //show options by clicking
+    const onInputClick = () => {
+        setOpen((prevValue) => !prevValue);
+    }
+
+    //select location by clicking
+    const onOptionSelected = (option) => {
+        setLocationValue(option.location);
+        setLocationCode(option.code)
+        setOpen(true);
+      };
+
+   //search button
+      const onSearch = (value) => {
         getJobs(value)
         setValue("")
+        setLocationValue("")
     }
+
+
 
     //add job to cart and store job in local storage
     useEffect(() => {
@@ -99,19 +131,20 @@ function SingleType({ jobCart,setJobCart}){
                         <div className='jobs'>
                             <h2 className='jobs__title'>Explore Your Potential Career Paths :</h2>
                             
+                            {/* Job search */}
                             <div className='jobs__search-container'>
+
+                            {/* Job search:title */}
                                 <div className='jobs__search-box'>
                                     <input
                                         className='jobs__search-input'
                                         type="text"
                                         onChange={onChange}
-                                        placeholder={`Explore here   (ex. ${defaultJob})`}
+                                        placeholder={`(ex. ${defaultJob})`}
                                         value={value}
                                     />
-                                    <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>    
-                                </div>
-                                <div className="jobs__search--dropdown">
-                     
+
+                                <div className={ `jobs__search--dropdown${select ? ' visible':""}`}>               
                                     {targetType.length && value.length?
                                         targetType[0].career.filter(ele => ele.toLowerCase().includes(value.toLowerCase() )).map((job) => {
                                             return <div
@@ -123,8 +156,37 @@ function SingleType({ jobCart,setJobCart}){
                                             </div>
                                             })
                                     : ""}
-                            </div>
-                            </div>    
+                                    </div>
+                                </div>
+
+                                {/* Job search:location */}
+                                <div className='jobs__search-box--location' onClick={onInputClick}>
+                                <input
+                                        className='jobs__search-input--location'
+                                        onChange={onLocationChange}
+                                        placeholder="Country"
+                                        value={locationValue}
+                                    />
+                                <div className={ `jobs__search--dropdown-location${open ? ' visible':""}`}>
+                                    {
+                                    locations.filter((item) => {
+                                        const searchTerm = locationValue.toLowerCase();
+                                        const location = item.location.toLowerCase();
+                                        if (!searchTerm) return true;
+                                        return location.startsWith(searchTerm);
+                                      })
+                                    .map( opt => {
+                                        return <div key={opt.code} onClick={() => onOptionSelected(opt)} className="jobs__search--row">
+                                            {opt.location}
+                                            </div>
+                                        })
+                                    }
+                                       
+
+                                </div>
+                                </div>
+                                <button onClick={() => onSearch(value)} className="jobs__search--btn"> Search </button>  
+                            </div>   
 
                           <div className='jobs__ticket-list'>
                             {
