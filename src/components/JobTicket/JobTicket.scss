@@ -279,6 +279,11 @@
         &:hover{
             filter: brightness(0) saturate(100%) invert(42%) sepia(51%) saturate(4006%) hue-rotate(330deg) brightness(87%) contrast(115%);
         }
+
+        &.liked{
+            filter: brightness(0) saturate(100%) invert(42%) sepia(51%) saturate(4006%) hue-rotate(330deg) brightness(87%) contrast(115%);
+        }
+
     }
     &__url{
         text-decoration: none;

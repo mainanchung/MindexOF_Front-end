@@ -1,12 +1,12 @@
 import './JobTicket.scss'
 import likeIcon from '../../Assetes/icon/like.svg'
-import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
 function JobTicket({job, setJobCart, jobCart}){
-
+    const [liked, setLiked] = useState(false)
+    console.log(liked)
 
     const  SalaryFormatter= (num) =>{
         return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
@@ -16,8 +16,17 @@ function JobTicket({job, setJobCart, jobCart}){
         let duplicatedJob = jobCart.find(ele => ele?.id == selectedJob.id)
            if(!duplicatedJob){
             setJobCart([...jobCart, selectedJob])
+            setLiked(true)
            }
     }
+    useEffect(() => {
+        let savedJob = jobCart.find(ele => ele?.id === job?.id)
+        if (savedJob) {
+            setLiked(true)
+        } else {
+            setLiked(false)
+        }
+      }, []);
 
     return( 
      
@@ -31,7 +40,7 @@ function JobTicket({job, setJobCart, jobCart}){
                         <p className='job-ticket__location'>{job.location.area[1]}  {job.location.area[0]}</p>
                 </div>  
                 <div className='job-ticket__function'>
-                    <img onClick={()=> addToCart(job)} className='job-ticket__icon'src={likeIcon} alt='like-icon'/>
+                    <img onClick={()=> addToCart(job)} className={`job-ticket__icon ${liked? "liked":""}`}src={likeIcon} alt='like-icon'/>
                     <a className="job-ticket__url" href={job.redirect_url}> <button className='job-ticket__btn'>Apply</button></a>
                 </div>         
             </div>
