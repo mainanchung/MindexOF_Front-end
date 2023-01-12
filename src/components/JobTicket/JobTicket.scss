@@ -102,6 +102,7 @@
               } 
               &.visible{
                 display: block;
+                z-index: 50;
                 }     
                
         }
@@ -193,6 +194,7 @@
                   
                 &.visible{
                     display: block;
+                    z-index: 50;
                 }  
             }
             

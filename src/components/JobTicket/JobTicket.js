@@ -1,12 +1,14 @@
 import './JobTicket.scss'
 import likeIcon from '../../Assetes/icon/like.svg'
 import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
 function JobTicket({job, setJobCart, jobCart}){
     const [liked, setLiked] = useState(false)
-    console.log(liked)
+    useEffect(() => {Aos.init({duration:800});},[])
 
     const  SalaryFormatter= (num) =>{
         return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
@@ -30,7 +32,7 @@ function JobTicket({job, setJobCart, jobCart}){
 
     return( 
      
-        <div className='job-ticket'>
+        <div data-aos="fade-up" className='job-ticket'>
             <div className='job-ticket__container'>
              {/* <div className='job-ticket__color'></div> */}
                 <div className='job-ticket__content'>

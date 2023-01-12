@@ -6,6 +6,8 @@ import loadingIcon from '../../Assetes/icon/Loading.svg'
 import Header from '../../components/Header/Header';
 import JobTicket from '../../components/JobTicket/JobTicket';
 import axios from 'axios';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -25,7 +27,7 @@ function SingleType({ jobCart,setJobCart}){
     const [select, setSelect] = useState(false);
    
     console.log(currentJobData)
-
+    useEffect(() => {Aos.init({duration:800});},[])
     //get jobs based on target type's data.
     const getJobs = (career,location) => {
         axios.post(`http://localhost:8080/jobs/search`, 
@@ -105,22 +107,22 @@ function SingleType({ jobCart,setJobCart}){
             jobCart={jobCart}
             setJobCart={setJobCart} />
               <div className='type'>
-                        <div className='type__box'>
+                        <div data-aos="fade-up" className='type__box'>
                             <div className='type__image-box'>
                                 <img className='type__image' src={targetType[0].image} alt="type" />
                             </div>
-                                <div className='type__content'>
+                                <div data-aos="fade-up"  className='type__content'>
                                     <div className='type__type-name'>
                                         <h1  className='type__title'>THE <br/>{targetType[0].type_name}</h1>
                                         <h3 className='type__subtitle'>{targetType[0].type}</h3>
                                     </div>
-                                    <div className='type__text'>    
+                                    <div data-aos="fade-up"  className='type__text'>    
                                             <p className='type__intro'>{targetType[0].description}</p>
                                         <div className='type__traits'>
                                             <h4 className='type__box-title'>You are...</h4>
                                             <div className='type__traits-list'>
                                             {targetType[0].trait.map(ele =>
-                                            <p className='type__trait'>{ele}</p>
+                                            <p data-aos="fade-up"  className='type__trait'>{ele}</p>
                                             )}
                                             </div>
                                         </div>
@@ -128,7 +130,7 @@ function SingleType({ jobCart,setJobCart}){
                                 </div> 
                         </div> 
 
-                        <div className='jobs'>
+                        <div data-aos="fade-up" className='jobs'>
                             <h2 className='jobs__title'>Explore Your Potential Career Paths :</h2>
                             
                             {/* Job search */}
@@ -199,8 +201,7 @@ function SingleType({ jobCart,setJobCart}){
                                         jobCart = {jobCart}
                                     />    
                                 ) 
-                                : 
-                                <div className='loading'><img src={loadingIcon} alt="loading"/></div>
+                                : <div className='loading2'><img src={loadingIcon} alt="loading"/></div>
                             }
                             {currentJobData.length ? "" :<div className='no-data'><p>No result</p></div>}
                             </div>  

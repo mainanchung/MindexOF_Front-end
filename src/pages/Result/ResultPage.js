@@ -5,12 +5,12 @@ import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function ResultPage(){
     const userType = useParams().type;
     const[typeData, setTypeData] = useState([])
 
-    console.log(userType)
-    console.log(typeData)
+   
     useEffect(() => {
         axios.get(`http://localhost:8080/types/${userType}`).then((response) => {
                 console.log(response.data)

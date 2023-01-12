@@ -137,6 +137,7 @@
             overflow: hidden;
             transform: translateY(-150%);
             transition: all .50s;
+            z-index: 50;
             a::before {
                 background: transparent;
             }
