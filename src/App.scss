@@ -24,7 +24,7 @@ html, body {
 }
 
 .loading{
-  background-color: rgba($color: #FFFFFF, $alpha: 0.75);
+  background-color: rgba($color: #FFFFFF, $alpha: 0.80);
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -41,6 +41,6 @@ html, body {
   display: flex;
   flex-direction: column;
   margin-top: 10rem;
-  height: 20rem;
+  height: 15rem;
   }
 }

@@ -8,11 +8,13 @@
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     padding: 2rem 1rem;
+    margin-top: 1rem;
     
     @include tablet{
         grid-area: 2 / 1 / 7 / 6;
         display: flex; 
         padding-right:0;
+        margin-top: 2.5rem;
     }
 
     @include desktop{
@@ -29,7 +31,7 @@
         background: linear-gradient(-45deg, #fbe9b1, #fbccde, #b6e7fa, #b5e1d7);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
-        padding: 1rem;
+        padding: 2rem 1rem;
     
         @keyframes gradient {
             0% {
@@ -43,7 +45,7 @@
             }
         } 
         @include tablet{ 
-             padding: 0 2rem 2rem 2rem; 
+            padding: 2rem 1rem;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-column-gap: 0px;

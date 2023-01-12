@@ -12,11 +12,15 @@
     &__container{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 5rem;
         @include tablet{
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             padding: 1rem 0;
+            margin-top: 2rem;
         }
     }
 
@@ -37,14 +41,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 5rem;
+            
             @include tablet{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                margin-left: 2rem;
                 
             }
             @include desktop{
-                margin-left: 2.5rem;
+                margin-left: 4rem;
             }
             
         }
@@ -58,26 +65,106 @@
             }
         }
     }
+
+    &__toggle{
+        display: flex;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        right: -37vw;
+        top: -15vh;
+        .bar{
+            position: relative;
+            width: 30px;
+            height: 2px;
+            background:$Slate;
+            transition: all 0.45s ease-in-out;
+        }
+        .bar::before, .bar::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background:$Slate;
+            border-radius: 3px;
+            transition: all 0.45s ease-in-out;
+        }
+
+        .bar::before {
+            width: 30px;
+            transform: translateY(-8px);
+            right: 0;
+          }
+        .bar::after {
+            width: 30px;
+            transform: translateY(8px);
+          }
+          
+        &.open{
+            .bar {
+                transform: translateX(-40px);
+                background: transparent;
+            }
+            .bar::before {
+                width: 30px;
+                transform: rotate(45deg) translate(26px, -26px);
+            }
+            .bar::after {
+                transform: rotate(-45deg) translate(26px, 26px);
+              }
+        }  
+        @include tablet{
+            display: none;
+        }
+    }
    
     &__links{
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 0 ;
-        @include tablet{
-        display: flex;
-        justify-content: flex-end;
-        }
+        // display: flex;
+        // justify-content: space-between;
+        // padding: 1rem 0 ;
+        @include onlyShowsOnMobile{
+            padding: 0.5rem 0;
+            position: fixed;
+            top: 110px;
+            display: flex;
+            flex-direction: column;
+            background:rgba($color:#FFFFFF, $alpha: 0.9);
+            left: 0;
+            width: 100vw;
+            height:66vh;
+            overflow: hidden;
+            transform: translateY(-150%);
+            transition: all .50s;
+            a::before {
+                background: transparent;
+            }
+            &.open {
+                transform: translateX(0);
+            }
+            }
+
+            @include tablet{
+            display: flex;
+            justify-content: flex-end;
+            }
+            
         &--home, &--test, &--type, &--cart{
             display: flex;
             flex-direction: column;
             align-items: center;
-            
+            justify-content: center;
+            border-bottom: dashed $Cloud 1px;
+            padding-top: 0.5rem;
             @include tablet{
+                display: flex;
                 flex-direction: row;
-                margin-right: 1rem;
                 align-items: baseline;
+                border-bottom:none;
             }
         }
+
         &--icon{
             filter: brightness(0) saturate(100%) invert(36%) sepia(31%) saturate(323%) hue-rotate(184deg) brightness(101%) contrast(90%);
             width: 20px;
@@ -89,24 +176,37 @@
 
         &--text{
             // border-bottom: dashed 1px $Slate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0.5rem;
             padding-bottom: 0.5rem;
             font-size: 0.8rem;
             transition: 0.2s;
             margin-bottom: 0%;
             &:hover{
-                font-weight: 600;
+                font-weight:600;
                 color: $Slate;
             }
             @include tablet{
+                flex-direction: row;
+                margin-right: 0.5rem;
+                align-items: baseline;
                 border:none;
-                display: inline-block;
                 font-size: 1rem;
-                width: 6rem;
+                width: 5.8rem;
             }
         }
     }
 
     &__link{
+        &.active{
+
+         p{
+            font-weight: 600;
+            color: $Slate;
+         } 
+        }
         @include desktop{
             margin-right:2rem ; 
         }
@@ -114,5 +214,8 @@
         font-weight:200;
         text-decoration: none;
     }
+    //Hamburger menu
+    
+
    
 }

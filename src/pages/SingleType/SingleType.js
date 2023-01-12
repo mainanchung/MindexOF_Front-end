@@ -202,7 +202,7 @@ function SingleType({ jobCart,setJobCart}){
                                 : 
                                 <div className='loading'><img src={loadingIcon} alt="loading"/></div>
                             }
-                            {/* {currentJobData.length ? "" :<div className='no-data'><p>No result</p></div>} */}
+                            {currentJobData.length ? "" :<div className='no-data'><p>No result</p></div>}
                             </div>  
                         </div>
                 </div> 
