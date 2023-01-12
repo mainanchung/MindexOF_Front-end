@@ -75,7 +75,7 @@
         cursor: pointer;
         position: relative;
         right: -37vw;
-        top: -15vh;
+        top: -8vh;
         .bar{
             position: relative;
             width: 30px;
@@ -133,7 +133,7 @@
             background:rgba($color:#FFFFFF, $alpha: 0.9);
             left: 0;
             width: 100vw;
-            height:66vh;
+            height:16rem;
             overflow: hidden;
             transform: translateY(-150%);
             transition: all .50s;
