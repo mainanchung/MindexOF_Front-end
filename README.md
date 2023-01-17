@@ -1,7 +1,6 @@
 # About this project
-It is a job exploration software that is based on the concept of Myers-Briggs personality assessments and can help you determine the kind of occupations to which you are best suited.
-This test identifies different strengths and preferences in how people perceive the environment and make decisions.
-The 16 different personality types produced by the MBTI instrument after assessing preferences can be used to predict your ideal vocation.
+MindexOF is a  job exploration application  based on the concept of Myers-Briggs personality assessmentsto assist users in exploring and determining the types of occupations to which they are best suited.
+MindexOF offers a dynamic personality test and personalized job recommendations based on your personality type. Users can also learn about the 16 personality types and use MindexOF as a tool to explore job opportunities  in the actual world, save and track positions of interest, and create job applications with external links.
 
 ## Features
 - A dynamic personality test.
@@ -13,7 +12,7 @@ The 16 different personality types produced by the MBTI instrument after assessi
  #### Front-end
 - React.Js
 - Javascript
-- Scss
+- Sass
 - html
 - JSX
 
