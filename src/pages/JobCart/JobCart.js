@@ -10,15 +10,15 @@ const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]
 function JobCart({jobCart,setJobCart}){
    
     const deleteJob = (id) =>{
-        console.log('deleting',id)
+        console.log('deleting', id)
         let updatedCart = jobCart.filter(job => job.id !== id)
         setJobCart(updatedCart)
     }
 
-    // useEffect(() => {
-    //     localStorage.setItem("cart", JSON.stringify(savedJobCart))
-    // },[jobCart])
-
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(jobCart))
+        console.log('deleting')
+    },[jobCart])
 
     return( 
         <> 

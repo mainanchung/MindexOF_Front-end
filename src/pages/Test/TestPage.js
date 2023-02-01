@@ -8,6 +8,8 @@ import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import {Link} from 'react-scroll'
 import axios from 'axios';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Header from '../../components/Header/Header'
 import heroimg from '../../Assetes/image/HOME_img-01.svg'
 import test1img from '../../Assetes/image/star-partial.svg'
@@ -20,8 +22,9 @@ function TestPage( {jobCart}){
     const [currentScore, setCurrentscore] = useState([]);
     const [userType, setUserType] = useState("");
     const navigate = useNavigate();
-    
-    console.log(currentScore)  
+    // console.log(currentScore)
+
+    useEffect(() => {Aos.init({duration:1500});},[])
 
     const getTotal = (e) => {
         e.preventDefault(); 
@@ -37,8 +40,8 @@ function TestPage( {jobCart}){
             totalForEachType[i] = (totalForEachType[i] || 0) + 1; 
             });
 
-          console.log(total)
-          console.log(totalForEachType)
+        //   console.log(total)
+        //   console.log(totalForEachType)
           setCurrentscore(totalForEachType) 
             let type = '';
             console.log(totalForEachType.e +">="+ totalForEachType.i);
@@ -50,9 +53,6 @@ function TestPage( {jobCart}){
         console.log(type)
         navigate(`/test/${type}`)
     }
-    console.log(userType)
-
-   
 
     return( 
         <> 
@@ -60,20 +60,20 @@ function TestPage( {jobCart}){
         <Header
         jobCart={jobCart}/>   
             <div className='test__hero'>
-                    <div className='test__hero--text'>
+                    <div data-aos="fade-right" className='test__hero--text'>
                         <h1  className='test__title'>Finding Yourself<br/> Before<br/> Finding Your Job.</h1>
                         <p className='test__intro'>Understanding your Myers-Briggs personality type can help you identify careers you're best suited for.
                         This insight can help you understand what type of work and workplace environment might best fit your personality. 
                         Identifying a career path based on what you truly are!</p>
-                        <Link activeClass="active" to="test1" spy={true} smooth={true}> <button className='test__start-btn' >Let's start</button></Link>
+                        <Link activeClass="active" to="test-box__1" spy={true} smooth={true}> <button className='test__start-btn' >Let's start</button></Link>
                     </div>
-                <div className='test__hero--imgbox'>    
+                <div data-aos="fade-right" className='test__hero--imgbox'>    
                     <img className='test__hero--img' src={heroimg} alt='home-hero-img'/>
                 </div>
             </div>
             <form  onSubmit={getTotal} className='test__all'> 
             <div className='test__container' id='test__container'>
-                <div className='test-box__1'>
+                <div data-aos="fade-right" className='test-box__1' id='test-box__1'>
                     <Test   
                     key={Test1.id}  
                     quiz={Test1}
@@ -84,7 +84,7 @@ function TestPage( {jobCart}){
                     />
                     <img src={test1img} alt='test1img'/>
                 </div>
-                <div className='test-box__2'>
+                <div data-aos="fade-left" className='test-box__2' id='test-box__2'>
                     <Test 
                     key={Test2.id} 
                     quiz={Test2}
@@ -95,7 +95,7 @@ function TestPage( {jobCart}){
                     />
                      <img src={test2img} alt='test2img'/>
                 </div>
-                <div className='test-box__3'>
+                <div data-aos="fade-right" className='test-box__3' id='test-box__3'>
                     <Test 
                     key={Test3.id}
                     quiz={Test3}
@@ -106,7 +106,7 @@ function TestPage( {jobCart}){
                     />
                      <img src={test3img} alt='test3img'/>
                 </div>
-                <div className='test-box__4'>
+                <div data-aos="fade-left" className='test-box__4' id='test-box__4'>
                     <Test 
                     key={Test4.id} 
                     quiz={Test4}
