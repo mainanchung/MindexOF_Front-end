@@ -161,7 +161,7 @@
             @include tablet{
                 display: flex;
                 flex-direction: row;
-                align-items: baseline;
+                align-items: stretch;
                 border-bottom:none;
             }
         }

@@ -6,6 +6,7 @@ import homeIcon from '../../Assetes/icon/home.svg';
 import personIcon from '../../Assetes/icon/person2.svg';
 import testIcon from '../../Assetes/icon/test2.svg';
 import LOGO from '../../Assetes/icon/LOGO.svg';
+import User from '../../Assetes/icon/user.svg'
 
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
@@ -53,7 +54,8 @@ function Header({jobCart}){
                                 <img className='header__links--icon' src={cartIcon} alt='cartIcon'/>
                                 <p className='header__links--text '>My Jobs {jobCart.length? `(${jobCart.length})`:""}  </p>
                             </div>
-                        </NavLink>   
+                        </NavLink>  
+
                     </div>
                     <div
                         className={`header__toggle ${isOpen? "open" : ""}`}
