@@ -7,7 +7,7 @@ import ResultPage from './pages/Result/ResultPage';
 import Types from './pages/Types/Types';
 import SingleType from './pages/SingleType/SingleType';
 import JobCart from './pages/JobCart/JobCart';
-import Register from './pages/Register/Register';
+
 
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
@@ -60,7 +60,7 @@ function App() {
           />}
           />
 
-      
+
         </Routes>
         <a  className='resource' href="https://www.freepik.com/free-vector/mbti-concept-people-with-different-mindset-types_30538747.htm#query=mbti&position=33&from_view=search&track=sph">Image by upklyak on Freepik</a>
       </BrowserRouter>
