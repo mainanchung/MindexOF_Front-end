@@ -9,11 +9,11 @@ import axios from 'axios';
 function ResultPage(){
     const userType = useParams().type;
     const[typeData, setTypeData] = useState([])
+    console.log(process.env.REACT_APP_BASE_URL)
 
    
     useEffect(() => {
         axios.get(`http://localhost:8080/types/${userType}`).then((response) => {
-                console.log(response.data)
                 setTypeData(response.data)
                }).catch((error)=>{
             console.log(error)

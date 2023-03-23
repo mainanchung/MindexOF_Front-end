@@ -68,3 +68,19 @@ html, body {
   height: 8rem;
   }
 }
+
+.gitHub{
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: $Slate;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 100;
+  img{
+    margin-right:0.8rem;
+    width: 1.5rem;
+    filter: invert(45%) sepia(8%) saturate(1278%) hue-rotate(185deg) brightness(85%) contrast(90%);
+  }
+}

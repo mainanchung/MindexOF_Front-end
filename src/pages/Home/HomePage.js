@@ -9,6 +9,7 @@ import heroImg from '../../Assetes/image/DIRECTION.svg'
 
 function HomePage({jobCart}){
     useEffect(() => {Aos.init({duration:1000});},[])
+    console.log(process.env.REACT_APP_BASE_URL)
 
     return( 
         <> 
