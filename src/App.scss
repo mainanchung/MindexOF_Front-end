@@ -15,10 +15,72 @@ html, body {
 }
 
 .resource{
-  display: none;
-  position: fixed;
+  display: block;
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0.05rem;
   color: $Slate;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 100;
+}
+
+.loading{
+  background-color: rgba($color: #FFFFFF, $alpha: 0.80);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  z-index: 50;
+  img{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  height: 15rem;
+  }
+}
+
+.loading2{
+  background-color: rgba($color: #FFFFFF, $alpha: 0.80);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  img{
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  height: 8rem;
+  }
+}
+
+.gitHub{
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: $Slate;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 100;
+  img{
+    margin-right:0.8rem;
+    width: 1.5rem;
+    filter: invert(45%) sepia(8%) saturate(1278%) hue-rotate(185deg) brightness(85%) contrast(90%);
+  }
 }

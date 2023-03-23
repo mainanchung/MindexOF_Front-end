@@ -1,12 +1,15 @@
 import './HomePage.scss'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Header from '../../components/Header/Header';
 import heroImg from '../../Assetes/image/DIRECTION.svg'
 
 
 function HomePage({jobCart}){
+    useEffect(() => {Aos.init({duration:1000});},[])
+    console.log(process.env.REACT_APP_BASE_URL)
 
     return( 
         <> 
@@ -16,7 +19,7 @@ function HomePage({jobCart}){
             />
                 <div className='home__hero'>
 
-                    <div className='home__hero-content'>
+                    <div data-aos="fade-right" className='home__hero-content'>
 
                     <h1  className='home__title'>Selecting  <br/>Your <br/> Dream Job</h1>
                     <p className='home__intro'> Everyone has different dreams depending on their personal preferences and goals.
@@ -26,7 +29,7 @@ function HomePage({jobCart}){
                     <NavLink  to={"/test"} className='home__link'><button className='home__navigate-btn'>Start the test</button></NavLink>
                     </div>
 
-                    <img className='home__hero--image' src={heroImg} alt='heroImg' />
+                    <img data-aos="fade-right" className='home__hero--image' src={heroImg} alt='heroImg' />
                     
                 </div>
         </div>  

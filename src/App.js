@@ -7,6 +7,9 @@ import ResultPage from './pages/Result/ResultPage';
 import Types from './pages/Types/Types';
 import SingleType from './pages/SingleType/SingleType';
 import JobCart from './pages/JobCart/JobCart';
+import githubLogo from './Assetes/icon/github-mark-white.svg'
+
+
 
 const getJobCartFromLocalStorage = JSON.parse(localStorage.getItem("cart")|| "[]")
 
@@ -57,9 +60,11 @@ function App() {
             setJobCart={setJobCart}
           />}
           />
-         
+
+
         </Routes>
-        <a  className='resource' href="https://www.freepik.com/free-vector/mbti-concept-people-with-different-mindset-types_30538747.htm#query=mbti&position=33&from_view=search&track=sph">Image by upklyak on Freepik</a>
+        <a className='resource' href="https://www.freepik.com/free-vector/mbti-concept-people-with-different-mindset-types_30538747.htm#query=mbti&position=33&from_view=search&track=sph">Image by upklyak on Freepik</a>
+        <a className='gitHub' href='https://github.com/mainanchung'><img className='sns_logo' src={githubLogo}/></a>
       </BrowserRouter>
     </div>
   );
